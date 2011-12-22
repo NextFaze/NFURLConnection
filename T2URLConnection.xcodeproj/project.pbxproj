@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5BB0337149EBA5E000F7DD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0336149EBA5E000F7DD1 /* Foundation.framework */; };
+		B5BB0345149EBA5E000F7DD1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */; };
+		B5BB0347149EBA5E000F7DD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0346149EBA5E000F7DD1 /* UIKit.framework */; };
+		B5BB0348149EBA5E000F7DD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0336149EBA5E000F7DD1 /* Foundation.framework */; };
+		B5BB034B149EBA5E000F7DD1 /* libT2URLConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */; };
+		B5BB0390149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0385149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch */; };
+		B5BB0391149EBD0D000F7DD1 /* T2URLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0386149EBD0D000F7DD1 /* T2URLConnection.h */; };
+		B5BB0392149EBD0D000F7DD1 /* T2URLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB0387149EBD0D000F7DD1 /* T2URLConnection.m */; };
+		B5BB0393149EBD0D000F7DD1 /* T2URLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0388149EBD0D000F7DD1 /* T2URLRequest.h */; };
+		B5BB0394149EBD0D000F7DD1 /* T2URLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB0389149EBD0D000F7DD1 /* T2URLRequest.m */; };
+		B5BB0395149EBD0D000F7DD1 /* T2URLRequestDataUpload.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB038A149EBD0D000F7DD1 /* T2URLRequestDataUpload.h */; };
+		B5BB0396149EBD0D000F7DD1 /* T2URLRequestDataUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB038B149EBD0D000F7DD1 /* T2URLRequestDataUpload.m */; };
+		B5BB0399149EBD0D000F7DD1 /* T2URLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */; };
+		B5BB039A149EBD0D000F7DD1 /* T2URLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */; };
+		B5BB03A3149EBD2B000F7DD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5BB039E149EBD2B000F7DD1 /* InfoPlist.strings */; };
+		B5BB03A4149EBD2B000F7DD1 /* QueuedURLConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB03A1149EBD2B000F7DD1 /* QueuedURLConnectionTests.m */; };
+		B5BB03A5149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */; };
+		B5E05009149EBFEB00EA6072 /* T2URLXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */; };
+		B5E0500A149EBFEB00EA6072 /* T2URLXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */; };
+		B5E05021149EC2D400EA6072 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E0501C149EC2C800EA6072 /* libsbjson-ios.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5BB0349149EBA5E000F7DD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5BB032A149EBA5E000F7DD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BB0332149EBA5E000F7DD1;
+			remoteInfo = QueuedURLConnection;
+		};
+		B5E05017149EC2C800EA6072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC12323D1391D5CC00131607;
+			remoteInfo = SBJson;
+		};
+		B5E05019149EC2C800EA6072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC1232521391D5CC00131607;
+			remoteInfo = SBJsonTests;
+		};
+		B5E0501B149EC2C800EA6072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2626913920FC7003D9994;
+			remoteInfo = "sbjson-ios";
+		};
+		B5E0501D149EC2C800EA6072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2627313920FC7003D9994;
+			remoteInfo = "sbjson-iosTests";
+		};
+		B5E0501F149EC2D000EA6072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC2626813920FC7003D9994;
+			remoteInfo = "sbjson-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libT2URLConnection.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BB0336149EBA5E000F7DD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = T2URLConnectionTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B5BB0346149EBA5E000F7DD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B5BB0385149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T2URLConnection-Prefix.pch"; sourceTree = "<group>"; };
+		B5BB0386149EBD0D000F7DD1 /* T2URLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLConnection.h; sourceTree = "<group>"; };
+		B5BB0387149EBD0D000F7DD1 /* T2URLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLConnection.m; sourceTree = "<group>"; };
+		B5BB0388149EBD0D000F7DD1 /* T2URLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLRequest.h; sourceTree = "<group>"; };
+		B5BB0389149EBD0D000F7DD1 /* T2URLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLRequest.m; sourceTree = "<group>"; };
+		B5BB038A149EBD0D000F7DD1 /* T2URLRequestDataUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLRequestDataUpload.h; sourceTree = "<group>"; };
+		B5BB038B149EBD0D000F7DD1 /* T2URLRequestDataUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLRequestDataUpload.m; sourceTree = "<group>"; };
+		B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLResponse.h; sourceTree = "<group>"; };
+		B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLResponse.m; sourceTree = "<group>"; };
+		B5BB039F149EBD2B000F7DD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5BB03A0149EBD2B000F7DD1 /* QueuedURLConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueuedURLConnectionTests.h; sourceTree = "<group>"; };
+		B5BB03A1149EBD2B000F7DD1 /* QueuedURLConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueuedURLConnectionTests.m; sourceTree = "<group>"; };
+		B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "T2URLConnectionTests-Info.plist"; sourceTree = "<group>"; };
+		B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLXMLParser.h; sourceTree = "<group>"; };
+		B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLXMLParser.m; sourceTree = "<group>"; };
+		B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = "Frameworks/json-framework/SBJson.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5BB0330149EBA5E000F7DD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E05021149EC2D400EA6072 /* libsbjson-ios.a in Frameworks */,
+				B5BB0337149EBA5E000F7DD1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BB033F149EBA5E000F7DD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BB0345149EBA5E000F7DD1 /* SenTestingKit.framework in Frameworks */,
+				B5BB0347149EBA5E000F7DD1 /* UIKit.framework in Frameworks */,
+				B5BB0348149EBA5E000F7DD1 /* Foundation.framework in Frameworks */,
+				B5BB034B149EBA5E000F7DD1 /* libT2URLConnection.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5BB0328149EBA5E000F7DD1 = {
+			isa = PBXGroup;
+			children = (
+				B5BB0384149EBD0D000F7DD1 /* T2URLConnection */,
+				B5BB039D149EBD2B000F7DD1 /* T2URLConnectionTests */,
+				B5BB0335149EBA5E000F7DD1 /* Frameworks */,
+				B5BB0334149EBA5E000F7DD1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5BB0334149EBA5E000F7DD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */,
+				B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5BB0335149EBA5E000F7DD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */,
+				B5BB0336149EBA5E000F7DD1 /* Foundation.framework */,
+				B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */,
+				B5BB0346149EBA5E000F7DD1 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5BB0384149EBD0D000F7DD1 /* T2URLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB0386149EBD0D000F7DD1 /* T2URLConnection.h */,
+				B5BB0387149EBD0D000F7DD1 /* T2URLConnection.m */,
+				B5BB0388149EBD0D000F7DD1 /* T2URLRequest.h */,
+				B5BB0389149EBD0D000F7DD1 /* T2URLRequest.m */,
+				B5BB038A149EBD0D000F7DD1 /* T2URLRequestDataUpload.h */,
+				B5BB038B149EBD0D000F7DD1 /* T2URLRequestDataUpload.m */,
+				B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */,
+				B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */,
+				B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */,
+				B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */,
+				B5BB039C149EBD13000F7DD1 /* Supporting Files */,
+			);
+			path = T2URLConnection;
+			sourceTree = "<group>";
+		};
+		B5BB039C149EBD13000F7DD1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB0385149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5BB039D149EBD2B000F7DD1 /* T2URLConnectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB03A0149EBD2B000F7DD1 /* QueuedURLConnectionTests.h */,
+				B5BB03A1149EBD2B000F7DD1 /* QueuedURLConnectionTests.m */,
+				B5BB03A6149EBD39000F7DD1 /* Supporting Files */,
+			);
+			path = T2URLConnectionTests;
+			sourceTree = "<group>";
+		};
+		B5BB03A6149EBD39000F7DD1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */,
+				B5BB039E149EBD2B000F7DD1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5E0500E149EC2C700EA6072 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5E05018149EC2C800EA6072 /* SBJson.framework */,
+				B5E0501A149EC2C800EA6072 /* SBJsonTests.octest */,
+				B5E0501C149EC2C800EA6072 /* libsbjson-ios.a */,
+				B5E0501E149EC2C800EA6072 /* sbjson-iosTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B5BB0331149EBA5E000F7DD1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BB0390149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch in Headers */,
+				B5BB0391149EBD0D000F7DD1 /* T2URLConnection.h in Headers */,
+				B5BB0393149EBD0D000F7DD1 /* T2URLRequest.h in Headers */,
+				B5BB0395149EBD0D000F7DD1 /* T2URLRequestDataUpload.h in Headers */,
+				B5BB0399149EBD0D000F7DD1 /* T2URLResponse.h in Headers */,
+				B5E05009149EBFEB00EA6072 /* T2URLXMLParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B5BB0332149EBA5E000F7DD1 /* T2URLConnection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BB0357149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnection" */;
+			buildPhases = (
+				B5BB032F149EBA5E000F7DD1 /* Sources */,
+				B5BB0330149EBA5E000F7DD1 /* Frameworks */,
+				B5BB0331149EBA5E000F7DD1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5E05020149EC2D000EA6072 /* PBXTargetDependency */,
+			);
+			name = T2URLConnection;
+			productName = QueuedURLConnection;
+			productReference = B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B5BB0342149EBA5E000F7DD1 /* T2URLConnectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BB035A149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnectionTests" */;
+			buildPhases = (
+				B5BB033E149EBA5E000F7DD1 /* Sources */,
+				B5BB033F149EBA5E000F7DD1 /* Frameworks */,
+				B5BB0340149EBA5E000F7DD1 /* Resources */,
+				B5BB0341149EBA5E000F7DD1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BB034A149EBA5E000F7DD1 /* PBXTargetDependency */,
+			);
+			name = T2URLConnectionTests;
+			productName = QueuedURLConnectionTests;
+			productReference = B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5BB032A149EBA5E000F7DD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "2moro mobile";
+			};
+			buildConfigurationList = B5BB032D149EBA5E000F7DD1 /* Build configuration list for PBXProject "T2URLConnection" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B5BB0328149EBA5E000F7DD1;
+			productRefGroup = B5BB0334149EBA5E000F7DD1 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B5E0500E149EC2C700EA6072 /* Products */;
+					ProjectRef = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B5BB0332149EBA5E000F7DD1 /* T2URLConnection */,
+				B5BB0342149EBA5E000F7DD1 /* T2URLConnectionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B5E05018149EC2C800EA6072 /* SBJson.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SBJson.framework;
+			remoteRef = B5E05017149EC2C800EA6072 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E0501A149EC2C800EA6072 /* SBJsonTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SBJsonTests.octest;
+			remoteRef = B5E05019149EC2C800EA6072 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E0501C149EC2C800EA6072 /* libsbjson-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libsbjson-ios.a";
+			remoteRef = B5E0501B149EC2C800EA6072 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E0501E149EC2C800EA6072 /* sbjson-iosTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "sbjson-iosTests.octest";
+			remoteRef = B5E0501D149EC2C800EA6072 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5BB0340149EBA5E000F7DD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BB03A3149EBD2B000F7DD1 /* InfoPlist.strings in Resources */,
+				B5BB03A5149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5BB0341149EBA5E000F7DD1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5BB032F149EBA5E000F7DD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BB0392149EBD0D000F7DD1 /* T2URLConnection.m in Sources */,
+				B5BB0394149EBD0D000F7DD1 /* T2URLRequest.m in Sources */,
+				B5BB0396149EBD0D000F7DD1 /* T2URLRequestDataUpload.m in Sources */,
+				B5BB039A149EBD0D000F7DD1 /* T2URLResponse.m in Sources */,
+				B5E0500A149EBFEB00EA6072 /* T2URLXMLParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BB033E149EBA5E000F7DD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BB03A4149EBD2B000F7DD1 /* QueuedURLConnectionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5BB034A149EBA5E000F7DD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BB0332149EBA5E000F7DD1 /* T2URLConnection */;
+			targetProxy = B5BB0349149EBA5E000F7DD1 /* PBXContainerItemProxy */;
+		};
+		B5E05020149EC2D000EA6072 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "sbjson-ios";
+			targetProxy = B5E0501F149EC2D000EA6072 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5BB039E149EBD2B000F7DD1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5BB039F149EBD2B000F7DD1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5BB0355149EBA5E000F7DD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B5BB0356149EBA5E000F7DD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5BB0358149EBA5E000F7DD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				DSTROOT = /tmp/QueuedURLConnection.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Frameworks/json-framework/Classes";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = T2URLConnection;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B5BB0359149EBA5E000F7DD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				DSTROOT = /tmp/QueuedURLConnection.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Frameworks/json-framework/Classes";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = T2URLConnection;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B5BB035B149EBA5E000F7DD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueuedURLConnection/QueuedURLConnection-Prefix.pch";
+				INFOPLIST_FILE = "QueuedURLConnectionTests/T2URLConnectionTests-Info.plist";
+				PRODUCT_NAME = T2URLConnectionTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B5BB035C149EBA5E000F7DD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueuedURLConnection/QueuedURLConnection-Prefix.pch";
+				INFOPLIST_FILE = "QueuedURLConnectionTests/T2URLConnectionTests-Info.plist";
+				PRODUCT_NAME = T2URLConnectionTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5BB032D149EBA5E000F7DD1 /* Build configuration list for PBXProject "T2URLConnection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BB0355149EBA5E000F7DD1 /* Debug */,
+				B5BB0356149EBA5E000F7DD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BB0357149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BB0358149EBA5E000F7DD1 /* Debug */,
+				B5BB0359149EBA5E000F7DD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BB035A149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BB035B149EBA5E000F7DD1 /* Debug */,
+				B5BB035C149EBA5E000F7DD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5BB032A149EBA5E000F7DD1 /* Project object */;
+}

@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'T2URLConnection' target in the 'T2URLConnection' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+#ifndef LOG
+#ifdef DEBUG
+#define LOG(format, ...) NSLog(@"%s:%@", __PRETTY_FUNCTION__,[NSString stringWithFormat:format, ## __VA_ARGS__]);
+#else
+#define LOG(format, ...)
+#endif
+#endif
