@@ -16,7 +16,7 @@
 
 @interface T2URLRequest : NSOperation {
     int requestType;
-    int tag;
+    id tag;
     NSMutableURLRequest *req;
     NSMutableDictionary *parameters;
     NSString *stringBoundary;
@@ -29,7 +29,8 @@
 }
 
 @property (nonatomic, retain) NSMutableURLRequest *req;
-@property (nonatomic, assign) int requestType, tag;
+@property (nonatomic, assign) int requestType;
+@property (nonatomic, retain) id tag;
 @property (nonatomic, retain) NSDictionary *parameters;
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, retain) NSString *HTTPMethod;

@@ -67,6 +67,7 @@
     [req release];
     [parameters release];
     [stringBoundary release];
+    [tag release];
     
     [super dealloc];
 }
@@ -204,6 +205,9 @@
             }
             else {
                 [req setHTTPBody:[query dataUsingEncoding:NSUTF8StringEncoding]];
+                [req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+
+                LOG(@"request body: %@", query);
             }
         }
     }
@@ -258,7 +262,7 @@
     response.data = data;
     response.request = request;
     response.error = err;
-    
+        
     //LOG(@"response body: %@", [response body]);
     LOG(@"response code: %d", [response.httpResponse statusCode]);
     if(response.error) LOG(@"response error: %@", response.error);
