@@ -42,7 +42,14 @@ Synopsis
     [conn sendRequest:req];
 
     // send a request synchronously
-    [conn sendSynchronousRequest:req];
+    T2URLResponse *response = [conn sendSynchronousRequest:req];
+    
+    // accessing data structures from the response
+    id data = response.object;   // NSArray or NSDictionary if response body is json or xml
+
+    // differentiating responses based on the request
+    // the response object contains a reference to the request:
+    NSLog(@"request type is: %d", response.request.requestType);
 
 Network Queue
 -------------
