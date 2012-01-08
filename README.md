@@ -1,0 +1,56 @@
+T2URLConnection
+===============
+
+T2URLConnection - basic framework for sending network requests and parsing responses
+
+External requirements:
+
+* json-framework
+
+Installation
+------------
+
+    > git clone git://github.com/2moro/T2URLConnction.git
+    > cd T2URLConnction
+    > git submodule init
+    > git submodule update
+
+T2URLConnction is a Cocoa Touch Static Library project, and can be incorporated into other xcode projects in the usual ways.
+
+Synopsis
+--------
+
+    // optionally: define an enumeration of request types
+    typedef enum {
+       RequestType1,    
+       RequestType2,
+       RequestType2
+    } RequestType;
+
+    // create a url connection:
+    T2URLConnection *conn = [[T2URLConnection alloc] init];
+    conn.delegate = self;   // optional
+    
+    // create a request
+    T2URLRequest *req = [[[T2URLRequest alloc] init] autorelease];
+    req.path = [NSString stringWithFormat:@"parties/%d.json", party.sid];
+    req.HTTPMethod = @"GET"; 
+    req.requestType = RequestType1;   // optionally assign a request type
+    [req setParameterValue:@"foo" forKey:@"bar"];  // optionally assign parameters
+
+    // send a request asynchronously
+    [conn sendRequest:req];
+
+    // send a request synchronously
+    [conn sendSynchronousRequest:req];
+
+Network Queue
+-------------
+
+The queue property of T2URLConnection is a NSOperationQueue, and can be accessed to modify the number of concurrent network operations sent by the connection (when sending asynchronous requests).  Each T2URLRequest is a NSOperation, and dependencies can be set up between them in the normal way.
+
+License
+-------
+Copyright 2011 2moro mobile
+see also LICENSE.txt
+
