@@ -8,11 +8,19 @@
 #import "T2URLRequest.h"
 #import "T2URLRequestDataUpload.h"
 #import "T2URLResponse.h"
+#import "SBJson.h"
+
+typedef enum {
+    T2URLRequestContentTypeForm,    
+    T2URLRequestContentTypeXML,
+    T2URLRequestContentTypeJSON
+} T2URLRequestContentType;
 
 @implementation T2URLRequest
 
-@synthesize requestType, tag, req, parameters, delegate;
+@synthesize requestType, tag, req, parameters;
 @synthesize isExecuting, isFinished;
+@synthesize response;
 
 + (T2URLRequest *)requestWithURL:(NSURL *)url {
     return [[[self alloc] initWithURL:url] autorelease];
@@ -29,12 +37,13 @@
     if(self) {
         parameters = [[NSMutableDictionary alloc] init];
         req = [[NSMutableURLRequest alloc] init];
+        self.contentType = T2URLRequestDefaultContentType;
 
         // create a boundary string for multipart form data
         CFUUIDRef uuid = CFUUIDCreate(nil);
         NSString *uuidString = [(NSString*)CFUUIDCreateString(nil, uuid) autorelease];
         CFRelease(uuid);
-        stringBoundary = [[NSString stringWithFormat:@"0xKhTmLbOuNdArY-%@", uuidString] retain];
+        stringBoundary = [[NSString stringWithFormat:@"0xKhTmLbOuNdArY-%@", uuidString] retain];        
     }
     return self;
 }
@@ -83,11 +92,19 @@
 }
 
 - (void)setHTTPMethod:(NSString *)HTTPMethod {
-    req.HTTPMethod = HTTPMethod;
+    req.HTTPMethod = [HTTPMethod uppercaseString];
 }
 
 - (NSString *)HTTPMethod {
-    return req.HTTPMethod;
+    return [req.HTTPMethod uppercaseString];
+}
+
+- (void)setContentType:(NSString *)contentType {
+    [req setValue:contentType forHTTPHeaderField:@"Content-Type"];
+}
+
+- (NSString *)contentType {
+    return [req valueForHTTPHeaderField:@"Content-Type"];
 }
 
 - (NSString*)urlEscape:(NSString *)str {            
@@ -104,15 +121,19 @@
     return NO;
 }
 
+- (NSString *)multipartContentType {
+    NSString *charset = (NSString *)CFStringConvertEncodingToIANACharSetName(kCFStringEncodingUTF8);
+    return [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, stringBoundary];
+}
+
 - (void)buildMultipartFormDataPostBody
 {
-	NSString *charset = (NSString *)CFStringConvertEncodingToIANACharSetName(kCFStringEncodingUTF8);
-	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; charset=%@; boundary=%@", charset, stringBoundary];
     NSMutableData *data = [NSMutableData data];
     NSData *boundary = [[NSString stringWithFormat:@"--%@\r\n", stringBoundary] dataUsingEncoding:NSUTF8StringEncoding];
 	NSData *endBoundary = [[NSString stringWithFormat:@"\r\n--%@\r\n", stringBoundary] dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [req setValue:contentType forHTTPHeaderField:@"Content-Type"];
+
+    // override content type here
+    self.contentType = [self multipartContentType];
     [data appendData:boundary];
     
     NSArray *keys = [parameters allKeys];
@@ -130,7 +151,7 @@
         else if([value isKindOfClass:[NSData class]] ||
                 [value isKindOfClass:[T2URLRequestDataUpload class]]) {
 
-            NSString *contentType = @"application/octet-stream";
+            NSString *partContentType = @"application/octet-stream";
             NSString *filename = @"filename";
             NSData *dataValue = nil;
 
@@ -138,7 +159,7 @@
                 T2URLRequestDataUpload *du = (T2URLRequestDataUpload *)value;
                 dataValue = du.data;
                 filename = du.filename ? du.filename : filename;
-                contentType = du.contentType;
+                partContentType = du.contentType;
             }
             else {
                 dataValue = value;
@@ -146,7 +167,7 @@
             
             NSString *disposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n", key, filename];
             [data appendData:[disposition dataUsingEncoding:NSUTF8StringEncoding]];
-            [data appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", contentType] dataUsingEncoding:NSUTF8StringEncoding]];
+            [data appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", partContentType] dataUsingEncoding:NSUTF8StringEncoding]];
 
             [data appendData:dataValue];
             LOG(@"added data param %@", key);
@@ -164,16 +185,37 @@
 
 #pragma mark -
 
-- (NSURLRequest *)urlRequest {
+- (T2URLRequestContentType)requestContentType:(NSString *)ct {
+    T2URLRequestContentType ctype = T2URLRequestContentTypeForm;  // the default
+
+    if([ct hasSuffix:@"/json"]) {
+        ctype = T2URLRequestContentTypeJSON;
+    } else if([ct hasSuffix:@"/xml"] || [ct hasSuffix:@"+xml"]) {
+        ctype = T2URLRequestContentTypeXML;
+    }
+    
+    return ctype;
+}
+
+// return a query string (key=value pairs separated by '&') from the current parameters
+// appends to any existing query set on the request object
+- (NSString *)queryString {
     NSURL *url = [req URL];
     NSString *query = [url query];
     NSMutableArray *queryList = [NSMutableArray array];
 
     for(NSString *key in [parameters allKeys]) {
-        id value = [parameters valueForKey:key];
-        if(![value isKindOfClass:[NSString class]]) continue;
+        id<NSObject> value = [parameters valueForKey:key];
+        NSString *strValue = nil;
         
-        NSString *strValue = (NSString *)value;
+        if([value isKindOfClass:[NSString class]]) {
+            strValue = (NSString *)value;
+        } else if([value respondsToSelector:@selector(stringValue)]) {
+            strValue = [value performSelector:@selector(stringValue)];
+        } else {
+            continue;
+        }
+        
         NSString *part = [NSString stringWithFormat:@"%@=%@", [self urlEscape:key], [self urlEscape:strValue]];
         [queryList addObject:part];
     }
@@ -181,13 +223,20 @@
     
     if([query length]) query = [query stringByAppendingFormat:@"&%@", newQuery];
     else query = newQuery;
-    
-    if([query length]) {
-        if([[[req HTTPMethod] uppercaseString] isEqualToString:@"GET"]) {
-            // GET request
 
-            // remove query from baseURL
-            NSString *baseURL = [url absoluteString];
+    return query;
+}
+
+- (NSURLRequest *)urlRequest {
+    
+    if([self.HTTPMethod isEqualToString:@"GET"]) {
+        // assume get requests do not have a body
+        // (you can still set the body manually)
+        NSString *query = [self queryString];
+        
+        if([query length]) {
+            // remove any existing query from baseURL
+            NSString *baseURL = [req.URL absoluteString];
             NSRange queryRange = [baseURL rangeOfString:query options:NSBackwardsSearch];
             if(queryRange.location != NSNotFound) {
                 baseURL = [baseURL stringByReplacingCharactersInRange:queryRange withString:@""];
@@ -198,20 +247,41 @@
             [self.req setURL:newURL];
             [newURL release];
         }
-        else {
-            // add parameters to request body
-            if([self haveBinaryParameters]) {
-                [self buildMultipartFormDataPostBody];
-            }
-            else {
-                [req setHTTPBody:[query dataUsingEncoding:NSUTF8StringEncoding]];
-                [req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    }
+    else if(req.HTTPBody == nil && [parameters count]) {
+        // non GET request with no body set - encode body from parameters according to the contentType
 
-                LOG(@"request body: %@", query);
-            }
+        switch ([self requestContentType:self.contentType]) {
+
+            case T2URLRequestContentTypeForm:
+                // add parameters to request body
+                if([self haveBinaryParameters]) {
+                    [self buildMultipartFormDataPostBody];
+                }
+                else {
+                    NSString *query = [self queryString];
+                    [req setHTTPBody:[query dataUsingEncoding:NSUTF8StringEncoding]];
+                    LOG(@"request body: %@", query);
+                }
+
+                break;
+
+            case T2URLRequestContentTypeJSON:
+                req.HTTPBody = [[parameters JSONRepresentation] dataUsingEncoding:NSUTF8StringEncoding];
+                LOG(@"using http body: %@", [parameters JSONRepresentation]);
+                break;
+
+            case T2URLRequestContentTypeXML:
+                LOG(@"auto-encoding parameters as xml is not supported");
+                req.HTTPBody = nil;
+                break;
+
+            default:
+                LOG(@"unable to encode parameters for content type: %@", self.contentType);
+                break;
         }
     }
-    
+
     LOG(@"request: %@ %@", req.HTTPMethod, req.URL);
     return req;
 }
@@ -223,7 +293,6 @@
 - (void)setParameterValue:(id)value forKey:(NSString *)key {
     [parameters setValue:value forKey:key];
 }
-
 
 #pragma mark -
 
@@ -241,12 +310,8 @@
     [self didChangeValueForKey:@"isFinished"];
 }
 
-- (void)finish:(T2URLResponse *)response {
-    [self setIsExecuting:NO];
-    
-    LOG(@"calling complete on delegate");
-    [delegate t2URLRequestCompleted:self response:response];
-    
+- (void)finish {
+    [self setIsExecuting:NO];    
     [self setIsFinished:YES];
     LOG(@"finished");
 }
@@ -260,8 +325,9 @@
     T2URLResponse *response = [[[T2URLResponse alloc] init] autorelease];
     response.httpResponse = (NSHTTPURLResponse *)res;
     response.data = data;
-    response.request = request;
     response.error = err;
+    
+    request.response = response;
         
     //LOG(@"response body: %@", [response body]);
     LOG(@"response code: %d", [response.httpResponse statusCode]);
@@ -273,10 +339,15 @@
 - (void)performRequest {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     LOG(@"starting");
-    T2URLResponse *response = [T2URLRequest sendSynchronousRequest:self];
-    LOG(@"request finished");
-    if(![[NSThread currentThread] isCancelled])
-        [self finish:response];
+    
+    if(![self isCancelled] || [[NSThread currentThread] isCancelled]) {
+        self.response = [T2URLRequest sendSynchronousRequest:self];
+        LOG(@"request finished");
+    }
+
+    if(![self isCancelled] || [[NSThread currentThread] isCancelled]) {
+        [self finish];
+    }
     
     [pool release];
 }
@@ -284,9 +355,10 @@
 #pragma mark NSOperation
 
 - (void)start {
-    [self setIsExecuting:YES];
-    
-    [NSThread detachNewThreadSelector:@selector(performRequest) toTarget:self withObject:nil];
+    if(![self isCancelled]) {
+        [self setIsExecuting:YES];
+        [NSThread detachNewThreadSelector:@selector(performRequest) toTarget:self withObject:nil];
+    }
 }
 
 - (BOOL)isConcurrent {

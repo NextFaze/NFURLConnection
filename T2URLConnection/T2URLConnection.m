@@ -29,11 +29,8 @@
 
 - (void)dealloc {
     delegate = nil;
-    
-    for(T2URLRequest *req in [queue operations]) {
-        req.delegate = nil;
-    }
-    [queue cancelAllOperations];
+
+    [self cancelAllOperations];
     [queue release];
     
     [super dealloc];
@@ -41,8 +38,8 @@
 
 #pragma mark -
 
-- (void)notifyResponse:(T2URLResponse *)response {
-    [delegate t2URLConnection:self didReceiveResponse:response];
+- (void)notifyDelegate:(T2URLRequest *)req {
+    [delegate t2URLConnection:self requestCompleted:req];
 }
 
 #pragma mark -
@@ -63,19 +60,36 @@
     return count;
 }
 
+- (void)cancelAllOperations {
+    LOG(@"cancelling all operations");
+    for(NSOperation *op in queue.operations) {
+        if(!([op isFinished] || [op isCancelled])) {
+            LOG(@"cancelling operation: %@", op);
+            [op removeObserver:self forKeyPath:@"isFinished"];
+            [op cancel];
+        }
+    }
+    LOG(@"cancelling queue operations");
+    [queue cancelAllOperations];
+    LOG(@"done");
+}
+
 - (T2URLResponse *)sendSynchronousRequest:(T2URLRequest *)request {
     return [T2URLRequest sendSynchronousRequest:request];
 }
 
 - (void)sendRequest:(T2URLRequest *)request {
-    request.delegate = self;
+    [request addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
     [queue addOperation:request];
 }
 
-#pragma mark - T2URLRequestDelegate
+#pragma mark - KVO
 
-- (void)t2URLRequestCompleted:(T2URLRequest *)request response:(T2URLResponse *)response {
-    [self performSelectorOnMainThread:@selector(notifyResponse:) withObject:response waitUntilDone:YES];
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"isFinished"]) {
+        T2URLRequest *req = object;
+        [self performSelectorOnMainThread:@selector(notifyDelegate:) withObject:req waitUntilDone:YES];
+    }
 }
 
 @end

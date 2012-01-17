@@ -11,10 +11,9 @@
 
 @implementation T2URLResponse
 
-@synthesize error, request, data, httpResponse;
+@synthesize error, data, httpResponse;
 
 - (void)dealloc {
-    [request release];
     [data release];
     [httpResponse release];
     [error release];

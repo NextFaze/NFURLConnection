@@ -11,7 +11,7 @@
 
 @protocol T2URLConnectionDelegate;
 
-@interface T2URLConnection : NSObject <T2URLRequestDelegate> {
+@interface T2URLConnection : NSObject {
     NSObject<T2URLConnectionDelegate> *delegate;
     NSOperationQueue *queue;
 }
@@ -26,12 +26,13 @@
 
 - (int)executingRequestCount;
 - (int)outstandingRequestCount;
+- (void)cancelAllOperations;
 
 @end
 
 
 @protocol T2URLConnectionDelegate <NSObject>
 
-- (void)t2URLConnection:(T2URLConnection *)connection didReceiveResponse:(T2URLResponse *)response;
+- (void)t2URLConnection:(T2URLConnection *)connection requestCompleted:(T2URLRequest *)request;
 
 @end

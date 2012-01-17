@@ -6,13 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "T2URLResponse.h"
 
-@class T2URLResponse;
-@class T2URLRequest;
-
-@protocol T2URLRequestDelegate <NSObject>
-- (void)t2URLRequestCompleted:(T2URLRequest *)request response:(T2URLResponse *)response;
-@end
+#define T2URLRequestDefaultContentType @"application/x-www-form-urlencoded"
 
 @interface T2URLRequest : NSOperation {
     int requestType;
@@ -21,8 +17,7 @@
     NSMutableDictionary *parameters;
     NSString *stringBoundary;
     
-    // TODO: remove this delegate and use KVO
-    NSObject<T2URLRequestDelegate> *delegate;
+    T2URLResponse *response;
 
     @private
     BOOL isExecuting, isFinished;
@@ -33,9 +28,9 @@
 @property (nonatomic, retain) id tag;
 @property (nonatomic, retain) NSDictionary *parameters;
 @property (nonatomic, retain) NSURL *URL;
-@property (nonatomic, retain) NSString *HTTPMethod;
-@property (nonatomic, assign) id<T2URLRequestDelegate> delegate;
+@property (nonatomic, retain) NSString *HTTPMethod, *contentType;
 @property (nonatomic, readonly) BOOL isExecuting, isFinished;
+@property (nonatomic, retain) T2URLResponse *response;
 
 + (T2URLRequest *)requestWithURL:(NSURL *)url;
 + (T2URLRequest *)requestWithURL:(NSURL *)url parameters:(NSDictionary *)params;
