@@ -40,7 +40,7 @@
 - (NSString *)contentType {
     NSString *contentType = [self header:@"Content-Type"];
     NSRange charset = [contentType rangeOfString:@"; "];
-    if(charset.location)
+    if(charset.location && charset.location != NSNotFound)
         contentType = [contentType substringToIndex:charset.location];
     return contentType;
 }
