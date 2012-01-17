@@ -19,7 +19,7 @@ T2URLConnction is a Cocoa Touch Static Library project, and can be incorporated 
 
 Notes:
 - ensure T2URLConnection is added as Target Dependency
-- ensure libT2URLSConnection.a is added to Link Binary Wiht Libraries
+- ensure libT2URLSConnection.a is added to Link Binary With Libraries
 - in Build Settings, Other Linker Flags, add: -all_load
 
 
