@@ -8,6 +8,7 @@
 #import "T2URLResponse.h"
 #import "T2URLXMLParser.h"
 #import "SBJson.h"
+#import <UIKit/UIKit.h>
 
 @implementation T2URLResponse
 
@@ -61,6 +62,9 @@
         NSDictionary *dict = [parser dictionaryForXMLString:body];
         [parser dealloc];
         object = dict;
+    }
+    else if([contentType hasPrefix:@"image/"]) {
+        object = [UIImage imageWithData:self.data];
     }
     
     return object;
