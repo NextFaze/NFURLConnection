@@ -3,6 +3,14 @@ T2URLConnection
 
 T2URLConnection - basic framework for sending network requests and parsing responses
 
+T2URLConnection has a similar architecture to NSURLConnection, but with extra features:
+* an NSOperationQueue to control concurrent network requests, set up dependencies, and priorities etc.
+* constructs query part of url request from given parameters
+* automatically decode XML and JSON responses.
+* automatically encode parameters to a JSON body when sending a non-GET request with a JSON content type.
+* ability to construct multipart form body (including binary data) for POST requests
+* network responses are tied to the original request, so calling code can easily work with multiple concurrent requests.
+
 External requirements:
 
 * json-framework
@@ -22,7 +30,6 @@ Notes:
 - ensure libT2URLSConnection.a is added to Link Binary With Libraries
 - in Build Settings, Other Linker Flags, add: -all_load
 
-
 Synopsis
 --------
 
@@ -39,7 +46,7 @@ Synopsis
     
     // create a request
     T2URLRequest *req = [[[T2URLRequest alloc] init] autorelease];
-    req.path = [NSString stringWithFormat:@"parties/%d.json", party.sid];
+    req.URL = [NSURL URLWithString:@"http://www.google.com/"];
     req.HTTPMethod = @"GET"; 
     req.requestType = RequestType1;   // optionally assign a request type
     [req setParameterValue:@"foo" forKey:@"bar"];  // optionally assign parameters
@@ -56,6 +63,15 @@ Synopsis
     // differentiating responses based on the request
     // the response object contains a reference to the request:
     NSLog(@"request type is: %d", response.request.requestType);
+
+When using a delegate and asynchronous requests, implement the T2URLConnectionDelegate protocol:
+
+    // delegate method
+    - (void)t2URLConnection:(T2URLConnection *)connection requestCompleted:(T2URLRequest *)request {
+        T2URLResponse *response = request.response;
+        
+        ...
+    }
 
 Network Queue
 -------------

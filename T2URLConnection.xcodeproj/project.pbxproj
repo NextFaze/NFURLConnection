@@ -96,6 +96,7 @@
 		B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLXMLParser.h; sourceTree = "<group>"; };
 		B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLXMLParser.m; sourceTree = "<group>"; };
 		B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = "Frameworks/json-framework/SBJson.xcodeproj"; sourceTree = "<group>"; };
+		B5EBA5B614C6461500421D84 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 		B5BB0328149EBA5E000F7DD1 = {
 			isa = PBXGroup;
 			children = (
+				B5EBA5B614C6461500421D84 /* README.md */,
 				B5BB0384149EBD0D000F7DD1 /* T2URLConnection */,
 				B5BB039D149EBD2B000F7DD1 /* T2URLConnectionTests */,
 				B5BB0335149EBA5E000F7DD1 /* Frameworks */,
