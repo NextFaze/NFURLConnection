@@ -2,7 +2,7 @@
 //  T2URLResponse.h
 //
 //  Created by Andrew Williams on 15/09/11.
-//  Copyright 2011 2moro mobile. All rights reserved.
+//  Copyright 2011 NextFaze. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

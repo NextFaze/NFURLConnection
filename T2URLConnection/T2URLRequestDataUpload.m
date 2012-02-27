@@ -2,7 +2,7 @@
 //  T2URLRequestDataUpload.m
 //
 //  Created by Andrew Williams on 14/10/11.
-//  Copyright (c) 2011 2moro mobile. All rights reserved.
+//  Copyright (c) 2011 NextFaze. All rights reserved.
 //
 
 #import "T2URLRequestDataUpload.h"

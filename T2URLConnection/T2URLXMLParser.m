@@ -2,7 +2,7 @@
 //  T2URLXMLParser.m
 //
 //  Created by Andrew Williams on 15/09/11.
-//  Copyright 2011 2moro mobile. All rights reserved.
+//  Copyright 2011 NextFaze. All rights reserved.
 //
 // based on http://troybrant.net/blog/2010/09/simple-xml-to-nsdictionary-converter/
 

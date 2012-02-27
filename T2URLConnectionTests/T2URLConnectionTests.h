@@ -3,7 +3,7 @@
 //  T2URLConnectionTests
 //
 //  Created by Andrew Williams on 19/12/11.
-//  Copyright (c) 2011 2moro mobile. All rights reserved.
+//  Copyright (c) 2011 NextFaze. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>

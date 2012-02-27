@@ -22,8 +22,17 @@
 		B5BB0399149EBD0D000F7DD1 /* T2URLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */; };
 		B5BB039A149EBD0D000F7DD1 /* T2URLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */; };
 		B5BB03A3149EBD2B000F7DD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5BB039E149EBD2B000F7DD1 /* InfoPlist.strings */; };
-		B5BB03A4149EBD2B000F7DD1 /* QueuedURLConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB03A1149EBD2B000F7DD1 /* QueuedURLConnectionTests.m */; };
-		B5BB03A5149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */; };
+		B5BB03A4149EBD2B000F7DD1 /* T2URLConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB03A1149EBD2B000F7DD1 /* T2URLConnectionTests.m */; };
+		B5C2B49214FB34B400DBB257 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0346149EBA5E000F7DD1 /* UIKit.framework */; };
+		B5C2B49314FB34B400DBB257 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0336149EBA5E000F7DD1 /* Foundation.framework */; };
+		B5C2B49514FB34B400DBB257 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2B49414FB34B400DBB257 /* CoreGraphics.framework */; };
+		B5C2B49B14FB34B400DBB257 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5C2B49914FB34B400DBB257 /* InfoPlist.strings */; };
+		B5C2B49D14FB34B400DBB257 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C2B49C14FB34B400DBB257 /* main.m */; };
+		B5C2B4A114FB34B400DBB257 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C2B4A014FB34B400DBB257 /* AppDelegate.m */; };
+		B5C2B4AA14FB34B400DBB257 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C2B4A914FB34B400DBB257 /* ViewController.m */; };
+		B5C2B4C614FB351900DBB257 /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C2B4C514FB351900DBB257 /* MainWindow-iPhone.xib */; };
+		B5C2B4C814FB369300DBB257 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C2B4C714FB369300DBB257 /* ViewController.xib */; };
+		B5C2B4CB14FB392100DBB257 /* libT2URLConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */; };
 		B5E05009149EBFEB00EA6072 /* T2URLXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */; };
 		B5E0500A149EBFEB00EA6072 /* T2URLXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */; };
 		B5E05021149EC2D400EA6072 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E0501C149EC2C800EA6072 /* libsbjson-ios.a */; };
@@ -36,6 +45,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B5BB0332149EBA5E000F7DD1;
 			remoteInfo = QueuedURLConnection;
+		};
+		B5C2B4C914FB391D00DBB257 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5BB032A149EBA5E000F7DD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BB0332149EBA5E000F7DD1;
+			remoteInfo = T2URLConnection;
 		};
 		B5E05017149EC2C800EA6072 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -90,9 +106,21 @@
 		B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLResponse.h; sourceTree = "<group>"; };
 		B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLResponse.m; sourceTree = "<group>"; };
 		B5BB039F149EBD2B000F7DD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B5BB03A0149EBD2B000F7DD1 /* QueuedURLConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueuedURLConnectionTests.h; sourceTree = "<group>"; };
-		B5BB03A1149EBD2B000F7DD1 /* QueuedURLConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueuedURLConnectionTests.m; sourceTree = "<group>"; };
+		B5BB03A0149EBD2B000F7DD1 /* T2URLConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLConnectionTests.h; sourceTree = "<group>"; };
+		B5BB03A1149EBD2B000F7DD1 /* T2URLConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLConnectionTests.m; sourceTree = "<group>"; };
 		B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "T2URLConnectionTests-Info.plist"; sourceTree = "<group>"; };
+		B5C2B49014FB34B400DBB257 /* T2URLConnectionTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T2URLConnectionTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C2B49414FB34B400DBB257 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B5C2B49814FB34B400DBB257 /* T2URLConnectionTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "T2URLConnectionTestApp-Info.plist"; sourceTree = "<group>"; };
+		B5C2B49A14FB34B400DBB257 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5C2B49C14FB34B400DBB257 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5C2B49E14FB34B400DBB257 /* T2URLConnectionTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "T2URLConnectionTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		B5C2B49F14FB34B400DBB257 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B5C2B4A014FB34B400DBB257 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B5C2B4A814FB34B400DBB257 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B5C2B4A914FB34B400DBB257 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B5C2B4C514FB351900DBB257 /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPhone.xib"; sourceTree = "<group>"; };
+		B5C2B4C714FB369300DBB257 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLXMLParser.h; sourceTree = "<group>"; };
 		B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLXMLParser.m; sourceTree = "<group>"; };
 		B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = "Frameworks/json-framework/SBJson.xcodeproj"; sourceTree = "<group>"; };
@@ -120,6 +148,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5C2B48D14FB34B400DBB257 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C2B4CB14FB392100DBB257 /* libT2URLConnection.a in Frameworks */,
+				B5C2B49214FB34B400DBB257 /* UIKit.framework in Frameworks */,
+				B5C2B49314FB34B400DBB257 /* Foundation.framework in Frameworks */,
+				B5C2B49514FB34B400DBB257 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,6 +168,7 @@
 				B5EBA5B614C6461500421D84 /* README.md */,
 				B5BB0384149EBD0D000F7DD1 /* T2URLConnection */,
 				B5BB039D149EBD2B000F7DD1 /* T2URLConnectionTests */,
+				B5C2B49614FB34B400DBB257 /* T2URLConnectionTestApp */,
 				B5BB0335149EBA5E000F7DD1 /* Frameworks */,
 				B5BB0334149EBA5E000F7DD1 /* Products */,
 			);
@@ -139,6 +179,7 @@
 			children = (
 				B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */,
 				B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */,
+				B5C2B49014FB34B400DBB257 /* T2URLConnectionTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +191,7 @@
 				B5BB0336149EBA5E000F7DD1 /* Foundation.framework */,
 				B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */,
 				B5BB0346149EBA5E000F7DD1 /* UIKit.framework */,
+				B5C2B49414FB34B400DBB257 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,8 +225,8 @@
 		B5BB039D149EBD2B000F7DD1 /* T2URLConnectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB03A0149EBD2B000F7DD1 /* QueuedURLConnectionTests.h */,
-				B5BB03A1149EBD2B000F7DD1 /* QueuedURLConnectionTests.m */,
+				B5BB03A0149EBD2B000F7DD1 /* T2URLConnectionTests.h */,
+				B5BB03A1149EBD2B000F7DD1 /* T2URLConnectionTests.m */,
 				B5BB03A6149EBD39000F7DD1 /* Supporting Files */,
 			);
 			path = T2URLConnectionTests;
@@ -195,6 +237,31 @@
 			children = (
 				B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */,
 				B5BB039E149EBD2B000F7DD1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5C2B49614FB34B400DBB257 /* T2URLConnectionTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				B5C2B49F14FB34B400DBB257 /* AppDelegate.h */,
+				B5C2B4A014FB34B400DBB257 /* AppDelegate.m */,
+				B5C2B4A814FB34B400DBB257 /* ViewController.h */,
+				B5C2B4A914FB34B400DBB257 /* ViewController.m */,
+				B5C2B49714FB34B400DBB257 /* Supporting Files */,
+			);
+			path = T2URLConnectionTestApp;
+			sourceTree = "<group>";
+		};
+		B5C2B49714FB34B400DBB257 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5C2B49814FB34B400DBB257 /* T2URLConnectionTestApp-Info.plist */,
+				B5C2B49914FB34B400DBB257 /* InfoPlist.strings */,
+				B5C2B49C14FB34B400DBB257 /* main.m */,
+				B5C2B49E14FB34B400DBB257 /* T2URLConnectionTestApp-Prefix.pch */,
+				B5C2B4C514FB351900DBB257 /* MainWindow-iPhone.xib */,
+				B5C2B4C714FB369300DBB257 /* ViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -266,14 +333,32 @@
 			productReference = B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		B5C2B48F14FB34B400DBB257 /* T2URLConnectionTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5C2B4BF14FB34B500DBB257 /* Build configuration list for PBXNativeTarget "T2URLConnectionTestApp" */;
+			buildPhases = (
+				B5C2B48C14FB34B400DBB257 /* Sources */,
+				B5C2B48D14FB34B400DBB257 /* Frameworks */,
+				B5C2B48E14FB34B400DBB257 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5C2B4CA14FB391D00DBB257 /* PBXTargetDependency */,
+			);
+			name = T2URLConnectionTestApp;
+			productName = T2URLConnectionTestApp;
+			productReference = B5C2B49014FB34B400DBB257 /* T2URLConnectionTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B5BB032A149EBA5E000F7DD1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = "2moro mobile";
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = NextFaze;
 			};
 			buildConfigurationList = B5BB032D149EBA5E000F7DD1 /* Build configuration list for PBXProject "T2URLConnection" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -295,6 +380,7 @@
 			targets = (
 				B5BB0332149EBA5E000F7DD1 /* T2URLConnection */,
 				B5BB0342149EBA5E000F7DD1 /* T2URLConnectionTests */,
+				B5C2B48F14FB34B400DBB257 /* T2URLConnectionTestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -336,7 +422,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BB03A3149EBD2B000F7DD1 /* InfoPlist.strings in Resources */,
-				B5BB03A5149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C2B48E14FB34B400DBB257 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C2B49B14FB34B400DBB257 /* InfoPlist.strings in Resources */,
+				B5C2B4C614FB351900DBB257 /* MainWindow-iPhone.xib in Resources */,
+				B5C2B4C814FB369300DBB257 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +470,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5BB03A4149EBD2B000F7DD1 /* QueuedURLConnectionTests.m in Sources */,
+				B5BB03A4149EBD2B000F7DD1 /* T2URLConnectionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C2B48C14FB34B400DBB257 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C2B49D14FB34B400DBB257 /* main.m in Sources */,
+				B5C2B4A114FB34B400DBB257 /* AppDelegate.m in Sources */,
+				B5C2B4AA14FB34B400DBB257 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +491,11 @@
 			isa = PBXTargetDependency;
 			target = B5BB0332149EBA5E000F7DD1 /* T2URLConnection */;
 			targetProxy = B5BB0349149EBA5E000F7DD1 /* PBXContainerItemProxy */;
+		};
+		B5C2B4CA14FB391D00DBB257 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BB0332149EBA5E000F7DD1 /* T2URLConnection */;
+			targetProxy = B5C2B4C914FB391D00DBB257 /* PBXContainerItemProxy */;
 		};
 		B5E05020149EC2D000EA6072 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -399,6 +509,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				B5BB039F149EBD2B000F7DD1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B5C2B49914FB34B400DBB257 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5C2B49A14FB34B400DBB257 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -456,6 +574,7 @@
 				DSTROOT = /tmp/QueuedURLConnection.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "Frameworks/json-framework/Classes";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = T2URLConnection;
@@ -473,6 +592,7 @@
 				DSTROOT = /tmp/QueuedURLConnection.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "Frameworks/json-framework/Classes";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = T2URLConnection;
@@ -488,8 +608,8 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueuedURLConnection/QueuedURLConnection-Prefix.pch";
-				INFOPLIST_FILE = "QueuedURLConnectionTests/T2URLConnectionTests-Info.plist";
+				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				INFOPLIST_FILE = "T2URLConnectionTests/T2URLConnectionTests-Info.plist";
 				PRODUCT_NAME = T2URLConnectionTests;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -503,10 +623,51 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueuedURLConnection/QueuedURLConnection-Prefix.pch";
-				INFOPLIST_FILE = "QueuedURLConnectionTests/T2URLConnectionTests-Info.plist";
+				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				INFOPLIST_FILE = "T2URLConnectionTests/T2URLConnectionTests-Info.plist";
 				PRODUCT_NAME = T2URLConnectionTests;
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		B5C2B4C014FB34B500DBB257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T2URLConnectionTestApp/T2URLConnectionTestApp-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "T2URLConnectionTestApp/T2URLConnectionTestApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B5C2B4C114FB34B500DBB257 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T2URLConnectionTestApp/T2URLConnectionTestApp-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "T2URLConnectionTestApp/T2URLConnectionTestApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -539,6 +700,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B5C2B4BF14FB34B500DBB257 /* Build configuration list for PBXNativeTarget "T2URLConnectionTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C2B4C014FB34B500DBB257 /* Debug */,
+				B5C2B4C114FB34B500DBB257 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

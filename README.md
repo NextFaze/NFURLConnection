@@ -18,7 +18,7 @@ External requirements:
 Installation
 ------------
 
-    > git clone git://github.com/2moro/T2URLConnction.git
+    > git clone git://github.com/NextFaze/T2URLConnction.git
     > cd T2URLConnction
     > git submodule init
     > git submodule update
@@ -80,6 +80,6 @@ The queue property of T2URLConnection is a NSOperationQueue, and can be accessed
 
 License
 -------
-Copyright 2011 2moro mobile
+Copyright 2011 NextFaze
 see also LICENSE.txt
 
