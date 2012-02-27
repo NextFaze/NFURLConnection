@@ -9,11 +9,11 @@
 
 @interface T2URLResponse : NSObject {
     NSError *error;
-    NSData *data;
+    NSMutableData *data;
     NSHTTPURLResponse *httpResponse;
 }
 
-@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) NSMutableData *data;
 @property (nonatomic, retain) NSHTTPURLResponse *httpResponse;
 @property (nonatomic, retain) NSError *error;
 

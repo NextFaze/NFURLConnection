@@ -38,7 +38,7 @@ typedef enum {
         parameters = [[NSMutableDictionary alloc] init];
         req = [[NSMutableURLRequest alloc] init];
         self.contentType = T2URLRequestDefaultContentType;
-
+        
         // create a boundary string for multipart form data
         CFUUIDRef uuid = CFUUIDCreate(nil);
         NSString *uuidString = [(NSString*)CFUUIDCreateString(nil, uuid) autorelease];
@@ -324,16 +324,31 @@ typedef enum {
     
     T2URLResponse *response = [[[T2URLResponse alloc] init] autorelease];
     response.httpResponse = (NSHTTPURLResponse *)res;
-    response.data = data;
+    response.data = [NSMutableData dataWithData:data];
     response.error = err;
     
     request.response = response;
-        
+
     //LOG(@"response body: %@", [response body]);
     LOG(@"response code: %d", [response.httpResponse statusCode]);
     if(response.error) LOG(@"response error: %@", response.error);
-    
+    LOG(@"request finished");
+
     return response;
+}
+
+- (void)sendAsynchronousRequest {
+    
+    self.response = [[[T2URLResponse alloc] init] autorelease];
+    response.data = [NSMutableData data];
+    
+    NSURLRequest *urlRequest = [self urlRequest];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:NO];
+    [conn scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [conn start];
+    [conn release];
+
+    LOG(@"done");
 }
 
 - (void)performRequest {
@@ -341,13 +356,15 @@ typedef enum {
     LOG(@"starting");
     
     if(![self isCancelled] || [[NSThread currentThread] isCancelled]) {
-        self.response = [T2URLRequest sendSynchronousRequest:self];
-        LOG(@"request finished");
+        [self sendAsynchronousRequest];
+        //self.response = [T2URLRequest sendSynchronousRequest:self];
     }
 
+    /*
     if(![self isCancelled] || [[NSThread currentThread] isCancelled]) {
         [self finish];
     }
+     */
     
     [pool release];
 }
@@ -357,12 +374,75 @@ typedef enum {
 - (void)start {
     if(![self isCancelled]) {
         [self setIsExecuting:YES];
-        [NSThread detachNewThreadSelector:@selector(performRequest) toTarget:self withObject:nil];
+        [self performRequest];
+        //[NSThread detachNewThreadSelector:@selector(performRequest) toTarget:self withObject:nil];
     }
 }
 
 - (BOOL)isConcurrent {
     return YES;
 }
+
+
+#pragma mark NSURLConnectionDelegate
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)err {
+    response.error = err;
+    LOG(@"error: %@", err);
+    [self finish];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    //LOG(@"connection finished loading");
+    [self finish];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)res {
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)res;
+    if ([res respondsToSelector:@selector(allHeaderFields)]) {
+        NSDictionary *dictionary = [httpResponse allHeaderFields];
+        int code = [httpResponse statusCode];
+        LOG(@"response code: %d, content length: %@", code, [dictionary valueForKey:@"Content-Length"]);
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)d {
+    //LOG(@"received data");
+    if([self isCancelled]) {
+        [connection cancel];
+        // no call to delegate here
+        [self finish];
+        return;
+    }
+    [response.data appendData:d];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    LOG(@"auth challenge: %@", challenge);
+    
+    if ([challenge previousFailureCount] > 0) {
+        // handle bad credentials here
+        LOG(@"failure count: %d", [challenge previousFailureCount]);
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+        return;
+    }
+    
+    if ([[challenge protectionSpace] authenticationMethod] == NSURLAuthenticationMethodServerTrust) {
+        // makes connection work with ssl self signed certificates
+        LOG(@"certificate challenge");
+        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];	
+        [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
+    }
+}
+
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+}
+
+- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    // TODO: set error here?
+    [self finish];
+}
+
 
 @end

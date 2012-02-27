@@ -98,7 +98,9 @@
 
     label.text = request.response.body;
     frame.size = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(frame.size.width, 9999)];
+    LOG(@"label frame: (%.0f,%.0f)", frame.size.width, frame.size.height);
     label.frame = frame;
+    scrollView.contentSize = frame.size;
 }
 
 #pragma mark - UITextFieldDelegate

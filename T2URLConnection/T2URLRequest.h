@@ -10,7 +10,7 @@
 
 #define T2URLRequestDefaultContentType @"application/x-www-form-urlencoded"
 
-@interface T2URLRequest : NSOperation {
+@interface T2URLRequest : NSOperation <NSURLConnectionDelegate> {
     int requestType;
     id tag;
     NSMutableURLRequest *req;
