@@ -402,6 +402,7 @@ typedef enum {
     if ([res respondsToSelector:@selector(allHeaderFields)]) {
         NSDictionary *dictionary = [httpResponse allHeaderFields];
         int code = [httpResponse statusCode];
+        response.httpResponse = httpResponse;
         LOG(@"response code: %d, content length: %@", code, [dictionary valueForKey:@"Content-Length"]);
     }
 }

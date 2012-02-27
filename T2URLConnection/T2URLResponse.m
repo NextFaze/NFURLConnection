@@ -51,6 +51,8 @@
     NSString *body = [self body];
     id object = nil;
     
+    //LOG(@"content type: %@", contentType);
+    
     if([contentType isEqualToString:@"application/json"] ||
        [contentType isEqualToString:@"text/json"]) {
         object = [body JSONValue];
