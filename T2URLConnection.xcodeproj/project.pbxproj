@@ -708,6 +708,7 @@
 				B5C2B4C114FB34B500DBB257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
