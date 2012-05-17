@@ -126,7 +126,7 @@
     
     // Parse the XML
     //data = [self fixBadXML:data];
-    parser = [[[NSXMLParser alloc] initWithData:data] autorelease];
+    parser = [[NSXMLParser alloc] initWithData:data];
     parser.delegate = self;
     BOOL success = [parser parse];
 
