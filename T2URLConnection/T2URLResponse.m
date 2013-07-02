@@ -55,14 +55,16 @@
     
     if([contentType isEqualToString:@"application/json"] ||
        [contentType isEqualToString:@"text/json"]) {
-        object = [body JSONValue];
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        object = [parser objectWithString:body];
+        [parser release];
     }
     else if([contentType isEqualToString:@"application/xml"] ||
             [contentType isEqualToString:@"text/xml"] ||
             [contentType hasSuffix:@"+xml"]) {
         T2URLXMLParser *parser = [[T2URLXMLParser alloc] init];
         NSDictionary *dict = [parser dictionaryForXMLString:body];
-        [parser dealloc];
+        [parser release];
         object = dict;
     }
     else if([contentType hasPrefix:@"image/"]) {

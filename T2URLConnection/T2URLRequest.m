@@ -266,10 +266,13 @@ typedef enum {
 
                 break;
 
-            case T2URLRequestContentTypeJSON:
-                req.HTTPBody = [[parameters JSONRepresentation] dataUsingEncoding:NSUTF8StringEncoding];
-                LOG(@"using http body: %@", [parameters JSONRepresentation]);
+            case T2URLRequestContentTypeJSON: {
+                SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+                req.HTTPBody = [writer dataWithObject:parameters];
+                [writer release];
+                LOG(@"using http body: %@", [[[NSString alloc] initWithData:req.HTTPBody encoding:NSUTF8StringEncoding] autorelease]);
                 break;
+            }
 
             case T2URLRequestContentTypeXML:
                 LOG(@"auto-encoding parameters as xml is not supported");
