@@ -43,25 +43,37 @@ Synopsis
     // create a url connection:
     NFURLConnection *conn = [[NFURLConnection alloc] init];
     conn.delegate = self;   // optional
-    
-    // create a request
-    NFURLRequest *req = [[[NFURLRequest alloc] init] autorelease];
-    req.URL = [NSURL URLWithString:@"http://www.google.com/"];
+
+to create a request object    
+
+    NFURLRequest *req = [NFURLRequest requestWithURL:@"http://www.google.com/"];
     req.HTTPMethod = @"GET"; 
     req.requestType = RequestType1;   // optionally assign a request type
     [req setParameterValue:@"foo" forKey:@"bar"];  // optionally assign parameters
 
-    // send a request asynchronously
+to create a multipart form upload;
+if the request content type is NFURLRequestContentTypeForm (the default) and contains binary parameter data (either as NSData objects or NFURLRequestDataUpload objects), the body of the request will be encoded as multipart form data.
+
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NFURLRequestDataUpload *upload = [NFURLRequestDataUpload dataWithContentType:@"image/png" data:imageData];
+    NFURLRequest *req = [NFURLRequest requestWithURL:@"http://example.com/upload"];
+    req.HTTPMethod = @"POST";
+    [req setParameterValue:imageData forKey:@"image"];
+
+to send a request asynchronously
+
     [conn sendRequest:req];
 
-    // send a request synchronously
+to send a request synchronously
+
     NFURLResponse *response = [conn sendSynchronousRequest:req];
-    
-    // accessing data structures from the response
+
+access data structures from the response 
+
     id data = response.object;   // NSArray or NSDictionary if response body is json or xml
 
-    // differentiating responses based on the request
-    // the response object contains a reference to the request:
+differentiating responses based on the request
+
     NSLog(@"request type is: %d", response.request.requestType);
 
 When using a delegate and asynchronous requests, implement the NFURLConnectionDelegate protocol:

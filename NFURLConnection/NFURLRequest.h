@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) BOOL isExecuting, isFinished;
 @property (nonatomic, retain) NFURLResponse *response;
 
++ (NFURLRequest *)request;
 + (NFURLRequest *)requestWithURL:(NSURL *)url;
 + (NFURLRequest *)requestWithURL:(NSURL *)url parameters:(NSDictionary *)params;
 + (NFURLRequest *)requestWithType:(int)requestType;

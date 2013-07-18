@@ -21,6 +21,9 @@ typedef enum {
 
 @implementation NFURLRequest
 
++ (NFURLRequest *)request {
+    return [[[self alloc] init] autorelease];
+}
 + (NFURLRequest *)requestWithURL:(NSURL *)url {
     return [[[self alloc] initWithURL:url] autorelease];
 }
