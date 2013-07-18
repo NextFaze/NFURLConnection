@@ -11,17 +11,15 @@
 
 @implementation AppDelegate
 
-@synthesize window, navController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
     ViewController *vc = [[ViewController alloc] init];
-    [navController pushViewController:vc animated:NO];
-    window.rootViewController = navController;
+    [self.navController pushViewController:vc animated:NO];
+    self.window.rootViewController = self.navController;
     [vc release];
     
-    [window makeKeyAndVisible];
+    [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
     return YES;

@@ -9,14 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NFURLConnection.h"
 
-@interface ViewController : UIViewController <NFURLConnectionDelegate, UITextFieldDelegate> {
-    UIButton *goButton;
-    UITextField *textField;
-    UIScrollView *scrollView;
-    UILabel *label;
-    
-    NFURLConnection *connection;
-}
+@interface ViewController : UIViewController <NFURLConnectionDelegate, UITextFieldDelegate>
 
 @property (nonatomic, retain) IBOutlet UIButton *goButton;
 @property (nonatomic, retain) IBOutlet UITextField *textField;

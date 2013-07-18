@@ -11,23 +11,23 @@
 
 #define NFURLXMLParserTextKey @"text"
 
-@interface NFURLXMLParser (NFURL)
-- (id)compactArray:(NSArray *)src;
-- (id)compactDictionary:(NSDictionary *)src;
-- (NSDictionary *)objectWithData:(NSData *)data;
+@interface NFURLXMLParser ()
+
+@property (nonatomic, strong) NSMutableArray *dictionaryStack;
+@property (nonatomic, strong) NSMutableString *textInProgress;
+@property (nonatomic, strong) NSXMLParser *parser;
+
 @end
 
 @implementation NFURLXMLParser
 
-@synthesize error;
-
 #pragma mark -
 
 - (void)dealloc {
-    [parser release];
-    [dictionaryStack release];
-    [textInProgress release];
-    [error release];
+    [_parser release];
+    [_dictionaryStack release];
+    [_textInProgress release];
+    [_error release];
 
     [super dealloc];
 }
@@ -118,31 +118,27 @@
 
 - (NSDictionary *)objectWithData:(NSData *)data
 {
-    dictionaryStack = [[NSMutableArray alloc] init];
-    textInProgress = [[NSMutableString alloc] init];
+    self.dictionaryStack = [NSMutableArray array];
+    self.textInProgress = [NSMutableString string];
     
     // Initialize the stack with a fresh dictionary
-    [dictionaryStack addObject:[NSMutableDictionary dictionary]];
+    [self.dictionaryStack addObject:[NSMutableDictionary dictionary]];
     
     // Parse the XML
     //data = [self fixBadXML:data];
-    parser = [[NSXMLParser alloc] initWithData:data];
-    parser.delegate = self;
-    BOOL success = [parser parse];
+    self.parser = [[NSXMLParser alloc] initWithData:data];
+    self.parser.delegate = self;
+    BOOL success = [self.parser parse];
 
     // Return the stack's root dictionary on success
     if (success) {
-        NSDictionary *resultDict = [dictionaryStack objectAtIndex:0];
+        NSDictionary *resultDict = [self.dictionaryStack objectAtIndex:0];
         return [self compactDictionary:resultDict];
     }
     
-    [parser release];
-    parser = nil;
-    
-    [dictionaryStack release];
-    [textInProgress release];
-    dictionaryStack = nil;
-    textInProgress = nil;
+    self.parser = nil;
+    self.dictionaryStack = nil;
+    self.textInProgress = nil;
     
     return nil;
 }
@@ -153,7 +149,7 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     // Get the dictionary for the current level in the stack
-    NSMutableDictionary *parentDict = [dictionaryStack lastObject];
+    NSMutableDictionary *parentDict = [self.dictionaryStack lastObject];
     
     // Create the child dictionary for the new element, and initilaize it with the attributes
     NSMutableDictionary *childDict = [NSMutableDictionary dictionary];
@@ -189,33 +185,33 @@
     }
     
     // Update the stack
-    [dictionaryStack addObject:childDict];
+    [self.dictionaryStack addObject:childDict];
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
     // Update the parent dict with text info
-    NSMutableDictionary *dictInProgress = [dictionaryStack lastObject];
+    NSMutableDictionary *dictInProgress = [self.dictionaryStack lastObject];
     
     // Set the text property
-    if ([textInProgress length] > 0)
+    if ([self.textInProgress length] > 0)
     {
-        NSString *text = [textInProgress stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *text = [self.textInProgress stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [dictInProgress setObject:text forKey:NFURLXMLParserTextKey];
         
         // Reset the text
-        [textInProgress release];
-        textInProgress = [[NSMutableString alloc] init];
+        [self.textInProgress release];
+        self.textInProgress = [[NSMutableString alloc] init];
     }
     
     // Pop the current dict
-    [dictionaryStack removeLastObject];
+    [self.dictionaryStack removeLastObject];
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     // Build the text value
-    [textInProgress appendString:string];
+    [self.textInProgress appendString:string];
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError

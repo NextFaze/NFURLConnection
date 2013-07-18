@@ -11,12 +11,10 @@
 
 @implementation NFURLResponse
 
-@synthesize error, data, httpResponse;
-
 - (void)dealloc {
-    [data release];
-    [httpResponse release];
-    [error release];
+    [_data release];
+    [_httpResponse release];
+    [_error release];
     
     [super dealloc];
 }
@@ -24,12 +22,12 @@
 #pragma mark -
 
 - (NSString *)body {
-    NSString *body = [[[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding] autorelease];
+    NSString *body = [[[NSString alloc] initWithBytes:[self.data bytes] length:[self.data length] encoding:NSUTF8StringEncoding] autorelease];
     return body;
 }
 
 - (NSDictionary *)headers {
-    return [httpResponse allHeaderFields];
+    return [self.httpResponse allHeaderFields];
 }
 
 - (NSString *)header:(NSString *)name {
@@ -54,7 +52,7 @@
     
     if([contentType isEqualToString:@"application/json"] ||
        [contentType isEqualToString:@"text/json"]) {
-        object = data ? [NSJSONSerialization JSONObjectWithData:data options:0 error:nil] : nil;
+        object = self.data ? [NSJSONSerialization JSONObjectWithData:self.data options:0 error:nil] : nil;
     }
     else if([contentType isEqualToString:@"application/xml"] ||
             [contentType isEqualToString:@"text/xml"] ||

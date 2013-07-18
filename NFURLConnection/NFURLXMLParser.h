@@ -10,12 +10,6 @@
 
 
 @interface NFURLXMLParser : NSObject <NSXMLParserDelegate>
-{
-    NSMutableArray *dictionaryStack;
-    NSMutableString *textInProgress;
-    NSError *error;
-    NSXMLParser *parser;
-}
 
 @property (nonatomic, retain) NSError *error;
 

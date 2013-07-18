@@ -7,15 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NFURLResponse : NSObject {
-    NSError *error;
-    NSMutableData *data;
-    NSHTTPURLResponse *httpResponse;
-}
+@interface NFURLResponse : NSObject
 
-@property (nonatomic, retain) NSMutableData *data;
-@property (nonatomic, retain) NSHTTPURLResponse *httpResponse;
-@property (nonatomic, retain) NSError *error;
+@property (nonatomic, strong) NSMutableData *data;
+@property (nonatomic, strong) NSHTTPURLResponse *httpResponse;
+@property (nonatomic, strong) NSError *error;
 
 - (NSString *)body;
 - (NSString *)contentType;

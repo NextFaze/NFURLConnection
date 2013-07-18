@@ -7,14 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NFURLRequestDataUpload : NSObject {
-    NSString *contentType;
-    NSString *filename;
-    NSData *data;
-}
+@interface NFURLRequestDataUpload : NSObject
 
-@property (nonatomic, retain) NSString *contentType, *filename;
-@property (nonatomic, retain) NSData *data;
+@property (nonatomic, strong) NSString *contentType, *filename;
+@property (nonatomic, strong) NSData *data;
 
 + (NFURLRequestDataUpload *)dataWithContentType:(NSString *)contentType data:(NSData *)data;
 

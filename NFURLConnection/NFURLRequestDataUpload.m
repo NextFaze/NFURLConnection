@@ -9,8 +9,6 @@
 
 @implementation NFURLRequestDataUpload
 
-@synthesize contentType, data, filename;
-
 + (NFURLRequestDataUpload *)dataWithContentType:(NSString *)contentType data:(NSData *)data {
     NFURLRequestDataUpload *p = [[[self alloc] init] autorelease];
     p.contentType = contentType;
@@ -19,9 +17,9 @@
 }
 
 - (void)dealloc {
-    [contentType release];
-    [data release];
-    [filename release];
+    [_contentType release];
+    [_data release];
+    [_filename release];
     
     [super dealloc];
 }
