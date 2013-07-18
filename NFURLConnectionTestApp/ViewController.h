@@ -1,21 +1,21 @@
 //
 //  ViewController.h
-//  T2URLConnectionTestApp
+//  NFURLConnectionTestApp
 //
 //  Created by Andrew Williams on 27/02/12.
 //  Copyright (c) 2012 NextFaze. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "T2URLConnection.h"
+#import "NFURLConnection.h"
 
-@interface ViewController : UIViewController <T2URLConnectionDelegate, UITextFieldDelegate> {
+@interface ViewController : UIViewController <NFURLConnectionDelegate, UITextFieldDelegate> {
     UIButton *goButton;
     UITextField *textField;
     UIScrollView *scrollView;
     UILabel *label;
     
-    T2URLConnection *connection;
+    NFURLConnection *connection;
 }
 
 @property (nonatomic, retain) IBOutlet UIButton *goButton;

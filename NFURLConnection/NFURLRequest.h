@@ -1,27 +1,16 @@
 //
-//  T2URLRequest.h
+//  NFURLRequest.h
 //
 //  Created by Andrew Williams on 15/09/11.
 //  Copyright 2011 NextFaze. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "T2URLResponse.h"
+#import "NFURLResponse.h"
 
-#define T2URLRequestDefaultContentType @"application/x-www-form-urlencoded"
+#define NFURLRequestDefaultContentType @"application/x-www-form-urlencoded"
 
-@interface T2URLRequest : NSOperation <NSURLConnectionDelegate> {
-    int requestType;
-    id tag;
-    NSMutableURLRequest *req;
-    NSMutableDictionary *parameters;
-    NSString *stringBoundary;
-    
-    T2URLResponse *response;
-
-    @private
-    BOOL isExecuting, isFinished;
-}
+@interface NFURLRequest : NSOperation <NSURLConnectionDelegate>
 
 @property (nonatomic, retain) NSMutableURLRequest *req;
 @property (nonatomic, assign) int requestType;
@@ -30,13 +19,13 @@
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, retain) NSString *HTTPMethod, *contentType;
 @property (nonatomic, readonly) BOOL isExecuting, isFinished;
-@property (nonatomic, retain) T2URLResponse *response;
+@property (nonatomic, retain) NFURLResponse *response;
 
-+ (T2URLRequest *)requestWithURL:(NSURL *)url;
-+ (T2URLRequest *)requestWithURL:(NSURL *)url parameters:(NSDictionary *)params;
-+ (T2URLRequest *)requestWithType:(int)requestType;
++ (NFURLRequest *)requestWithURL:(NSURL *)url;
++ (NFURLRequest *)requestWithURL:(NSURL *)url parameters:(NSDictionary *)params;
++ (NFURLRequest *)requestWithType:(int)requestType;
 
-+ (T2URLResponse *)sendSynchronousRequest:(T2URLRequest *)request;
++ (NFURLResponse *)sendSynchronousRequest:(NFURLRequest *)request;
 
 - (id)initWithURL:(NSURL *)url parameters:(NSDictionary *)params;
 - (id)initWithURL:(NSURL *)url;

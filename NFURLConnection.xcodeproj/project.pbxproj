@@ -7,22 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B504D29017977BD7002CC17C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B504D28F17977BD7002CC17C /* Default-568h@2x.png */; };
 		B5BB0337149EBA5E000F7DD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0336149EBA5E000F7DD1 /* Foundation.framework */; };
 		B5BB0345149EBA5E000F7DD1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */; };
 		B5BB0347149EBA5E000F7DD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0346149EBA5E000F7DD1 /* UIKit.framework */; };
 		B5BB0348149EBA5E000F7DD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0336149EBA5E000F7DD1 /* Foundation.framework */; };
-		B5BB034B149EBA5E000F7DD1 /* libT2URLConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */; };
-		B5BB0390149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0385149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch */; };
-		B5BB0391149EBD0D000F7DD1 /* T2URLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0386149EBD0D000F7DD1 /* T2URLConnection.h */; };
-		B5BB0392149EBD0D000F7DD1 /* T2URLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB0387149EBD0D000F7DD1 /* T2URLConnection.m */; };
-		B5BB0393149EBD0D000F7DD1 /* T2URLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0388149EBD0D000F7DD1 /* T2URLRequest.h */; };
-		B5BB0394149EBD0D000F7DD1 /* T2URLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB0389149EBD0D000F7DD1 /* T2URLRequest.m */; };
-		B5BB0395149EBD0D000F7DD1 /* T2URLRequestDataUpload.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB038A149EBD0D000F7DD1 /* T2URLRequestDataUpload.h */; };
-		B5BB0396149EBD0D000F7DD1 /* T2URLRequestDataUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB038B149EBD0D000F7DD1 /* T2URLRequestDataUpload.m */; };
-		B5BB0399149EBD0D000F7DD1 /* T2URLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */; };
-		B5BB039A149EBD0D000F7DD1 /* T2URLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */; };
+		B5BB034B149EBA5E000F7DD1 /* libNFURLConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0333149EBA5E000F7DD1 /* libNFURLConnection.a */; };
+		B5BB0390149EBD0D000F7DD1 /* NFURLConnection-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0385149EBD0D000F7DD1 /* NFURLConnection-Prefix.pch */; };
+		B5BB0391149EBD0D000F7DD1 /* NFURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0386149EBD0D000F7DD1 /* NFURLConnection.h */; };
+		B5BB0392149EBD0D000F7DD1 /* NFURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB0387149EBD0D000F7DD1 /* NFURLConnection.m */; };
+		B5BB0393149EBD0D000F7DD1 /* NFURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB0388149EBD0D000F7DD1 /* NFURLRequest.h */; };
+		B5BB0394149EBD0D000F7DD1 /* NFURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB0389149EBD0D000F7DD1 /* NFURLRequest.m */; };
+		B5BB0395149EBD0D000F7DD1 /* NFURLRequestDataUpload.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB038A149EBD0D000F7DD1 /* NFURLRequestDataUpload.h */; };
+		B5BB0396149EBD0D000F7DD1 /* NFURLRequestDataUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB038B149EBD0D000F7DD1 /* NFURLRequestDataUpload.m */; };
+		B5BB0399149EBD0D000F7DD1 /* NFURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BB038E149EBD0D000F7DD1 /* NFURLResponse.h */; };
+		B5BB039A149EBD0D000F7DD1 /* NFURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB038F149EBD0D000F7DD1 /* NFURLResponse.m */; };
 		B5BB03A3149EBD2B000F7DD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5BB039E149EBD2B000F7DD1 /* InfoPlist.strings */; };
-		B5BB03A4149EBD2B000F7DD1 /* T2URLConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB03A1149EBD2B000F7DD1 /* T2URLConnectionTests.m */; };
+		B5BB03A4149EBD2B000F7DD1 /* NFURLConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB03A1149EBD2B000F7DD1 /* NFURLConnectionTests.m */; };
 		B5C2B49214FB34B400DBB257 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0346149EBA5E000F7DD1 /* UIKit.framework */; };
 		B5C2B49314FB34B400DBB257 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0336149EBA5E000F7DD1 /* Foundation.framework */; };
 		B5C2B49514FB34B400DBB257 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C2B49414FB34B400DBB257 /* CoreGraphics.framework */; };
@@ -32,10 +33,9 @@
 		B5C2B4AA14FB34B400DBB257 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C2B4A914FB34B400DBB257 /* ViewController.m */; };
 		B5C2B4C614FB351900DBB257 /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C2B4C514FB351900DBB257 /* MainWindow-iPhone.xib */; };
 		B5C2B4C814FB369300DBB257 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C2B4C714FB369300DBB257 /* ViewController.xib */; };
-		B5C2B4CB14FB392100DBB257 /* libT2URLConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */; };
-		B5E05009149EBFEB00EA6072 /* T2URLXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */; };
-		B5E0500A149EBFEB00EA6072 /* T2URLXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */; };
-		B5E05021149EC2D400EA6072 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E0501C149EC2C800EA6072 /* libsbjson-ios.a */; };
+		B5C2B4CB14FB392100DBB257 /* libNFURLConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0333149EBA5E000F7DD1 /* libNFURLConnection.a */; };
+		B5E05009149EBFEB00EA6072 /* NFURLXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E05007149EBFEB00EA6072 /* NFURLXMLParser.h */; };
+		B5E0500A149EBFEB00EA6072 /* NFURLXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05008149EBFEB00EA6072 /* NFURLXMLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,77 +53,42 @@
 			remoteGlobalIDString = B5BB0332149EBA5E000F7DD1;
 			remoteInfo = T2URLConnection;
 		};
-		B5E05017149EC2C800EA6072 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC12323D1391D5CC00131607;
-			remoteInfo = SBJson;
-		};
-		B5E05019149EC2C800EA6072 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC1232521391D5CC00131607;
-			remoteInfo = SBJsonTests;
-		};
-		B5E0501B149EC2C800EA6072 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCC2626913920FC7003D9994;
-			remoteInfo = "sbjson-ios";
-		};
-		B5E0501D149EC2C800EA6072 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCC2627313920FC7003D9994;
-			remoteInfo = "sbjson-iosTests";
-		};
-		B5E0501F149EC2D000EA6072 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCC2626813920FC7003D9994;
-			remoteInfo = "sbjson-ios";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libT2URLConnection.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B504D28F17977BD7002CC17C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B5BB0333149EBA5E000F7DD1 /* libNFURLConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNFURLConnection.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB0336149EBA5E000F7DD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = T2URLConnectionTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BB0343149EBA5E000F7DD1 /* NFURLConnectionTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFURLConnectionTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B5BB0346149EBA5E000F7DD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		B5BB0385149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T2URLConnection-Prefix.pch"; sourceTree = "<group>"; };
-		B5BB0386149EBD0D000F7DD1 /* T2URLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLConnection.h; sourceTree = "<group>"; };
-		B5BB0387149EBD0D000F7DD1 /* T2URLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLConnection.m; sourceTree = "<group>"; };
-		B5BB0388149EBD0D000F7DD1 /* T2URLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLRequest.h; sourceTree = "<group>"; };
-		B5BB0389149EBD0D000F7DD1 /* T2URLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLRequest.m; sourceTree = "<group>"; };
-		B5BB038A149EBD0D000F7DD1 /* T2URLRequestDataUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLRequestDataUpload.h; sourceTree = "<group>"; };
-		B5BB038B149EBD0D000F7DD1 /* T2URLRequestDataUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLRequestDataUpload.m; sourceTree = "<group>"; };
-		B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLResponse.h; sourceTree = "<group>"; };
-		B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLResponse.m; sourceTree = "<group>"; };
+		B5BB0385149EBD0D000F7DD1 /* NFURLConnection-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NFURLConnection-Prefix.pch"; sourceTree = "<group>"; };
+		B5BB0386149EBD0D000F7DD1 /* NFURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFURLConnection.h; sourceTree = "<group>"; };
+		B5BB0387149EBD0D000F7DD1 /* NFURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFURLConnection.m; sourceTree = "<group>"; };
+		B5BB0388149EBD0D000F7DD1 /* NFURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFURLRequest.h; sourceTree = "<group>"; };
+		B5BB0389149EBD0D000F7DD1 /* NFURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFURLRequest.m; sourceTree = "<group>"; };
+		B5BB038A149EBD0D000F7DD1 /* NFURLRequestDataUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFURLRequestDataUpload.h; sourceTree = "<group>"; };
+		B5BB038B149EBD0D000F7DD1 /* NFURLRequestDataUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFURLRequestDataUpload.m; sourceTree = "<group>"; };
+		B5BB038E149EBD0D000F7DD1 /* NFURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFURLResponse.h; sourceTree = "<group>"; };
+		B5BB038F149EBD0D000F7DD1 /* NFURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFURLResponse.m; sourceTree = "<group>"; };
 		B5BB039F149EBD2B000F7DD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B5BB03A0149EBD2B000F7DD1 /* T2URLConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLConnectionTests.h; sourceTree = "<group>"; };
-		B5BB03A1149EBD2B000F7DD1 /* T2URLConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLConnectionTests.m; sourceTree = "<group>"; };
-		B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "T2URLConnectionTests-Info.plist"; sourceTree = "<group>"; };
-		B5C2B49014FB34B400DBB257 /* T2URLConnectionTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T2URLConnectionTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BB03A0149EBD2B000F7DD1 /* NFURLConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFURLConnectionTests.h; sourceTree = "<group>"; };
+		B5BB03A1149EBD2B000F7DD1 /* NFURLConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFURLConnectionTests.m; sourceTree = "<group>"; };
+		B5BB03A2149EBD2B000F7DD1 /* NFURLConnectionTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NFURLConnectionTests-Info.plist"; sourceTree = "<group>"; };
+		B5C2B49014FB34B400DBB257 /* NFURLConnectionTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFURLConnectionTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C2B49414FB34B400DBB257 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B5C2B49814FB34B400DBB257 /* T2URLConnectionTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "T2URLConnectionTestApp-Info.plist"; sourceTree = "<group>"; };
+		B5C2B49814FB34B400DBB257 /* NFURLConnectionTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NFURLConnectionTestApp-Info.plist"; sourceTree = "<group>"; };
 		B5C2B49A14FB34B400DBB257 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5C2B49C14FB34B400DBB257 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B5C2B49E14FB34B400DBB257 /* T2URLConnectionTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "T2URLConnectionTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		B5C2B49E14FB34B400DBB257 /* NFURLConnectionTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NFURLConnectionTestApp-Prefix.pch"; sourceTree = "<group>"; };
 		B5C2B49F14FB34B400DBB257 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5C2B4A014FB34B400DBB257 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B5C2B4A814FB34B400DBB257 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B5C2B4A914FB34B400DBB257 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B5C2B4C514FB351900DBB257 /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPhone.xib"; sourceTree = "<group>"; };
 		B5C2B4C714FB369300DBB257 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T2URLXMLParser.h; sourceTree = "<group>"; };
-		B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T2URLXMLParser.m; sourceTree = "<group>"; };
-		B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = "Frameworks/json-framework/SBJson.xcodeproj"; sourceTree = "<group>"; };
+		B5E05007149EBFEB00EA6072 /* NFURLXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFURLXMLParser.h; sourceTree = "<group>"; };
+		B5E05008149EBFEB00EA6072 /* NFURLXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFURLXMLParser.m; sourceTree = "<group>"; };
 		B5EBA5B614C6461500421D84 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E05021149EC2D400EA6072 /* libsbjson-ios.a in Frameworks */,
 				B5BB0337149EBA5E000F7DD1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,7 +108,7 @@
 				B5BB0345149EBA5E000F7DD1 /* SenTestingKit.framework in Frameworks */,
 				B5BB0347149EBA5E000F7DD1 /* UIKit.framework in Frameworks */,
 				B5BB0348149EBA5E000F7DD1 /* Foundation.framework in Frameworks */,
-				B5BB034B149EBA5E000F7DD1 /* libT2URLConnection.a in Frameworks */,
+				B5BB034B149EBA5E000F7DD1 /* libNFURLConnection.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C2B4CB14FB392100DBB257 /* libT2URLConnection.a in Frameworks */,
+				B5C2B4CB14FB392100DBB257 /* libNFURLConnection.a in Frameworks */,
 				B5C2B49214FB34B400DBB257 /* UIKit.framework in Frameworks */,
 				B5C2B49314FB34B400DBB257 /* Foundation.framework in Frameworks */,
 				B5C2B49514FB34B400DBB257 /* CoreGraphics.framework in Frameworks */,
@@ -162,13 +126,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B504D28E17977BD7002CC17C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B504D28F17977BD7002CC17C /* Default-568h@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		B5BB0328149EBA5E000F7DD1 = {
 			isa = PBXGroup;
 			children = (
 				B5EBA5B614C6461500421D84 /* README.md */,
-				B5BB0384149EBD0D000F7DD1 /* T2URLConnection */,
-				B5BB039D149EBD2B000F7DD1 /* T2URLConnectionTests */,
-				B5C2B49614FB34B400DBB257 /* T2URLConnectionTestApp */,
+				B5BB0384149EBD0D000F7DD1 /* NFURLConnection */,
+				B5BB039D149EBD2B000F7DD1 /* NFURLConnectionTests */,
+				B5C2B49614FB34B400DBB257 /* NFURLConnectionTestApp */,
 				B5BB0335149EBA5E000F7DD1 /* Frameworks */,
 				B5BB0334149EBA5E000F7DD1 /* Products */,
 			);
@@ -177,9 +149,9 @@
 		B5BB0334149EBA5E000F7DD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */,
-				B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */,
-				B5C2B49014FB34B400DBB257 /* T2URLConnectionTestApp.app */,
+				B5BB0333149EBA5E000F7DD1 /* libNFURLConnection.a */,
+				B5BB0343149EBA5E000F7DD1 /* NFURLConnectionTests.octest */,
+				B5C2B49014FB34B400DBB257 /* NFURLConnectionTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,7 +159,6 @@
 		B5BB0335149EBA5E000F7DD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */,
 				B5BB0336149EBA5E000F7DD1 /* Foundation.framework */,
 				B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */,
 				B5BB0346149EBA5E000F7DD1 /* UIKit.framework */,
@@ -196,85 +167,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B5BB0384149EBD0D000F7DD1 /* T2URLConnection */ = {
+		B5BB0384149EBD0D000F7DD1 /* NFURLConnection */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB0386149EBD0D000F7DD1 /* T2URLConnection.h */,
-				B5BB0387149EBD0D000F7DD1 /* T2URLConnection.m */,
-				B5BB0388149EBD0D000F7DD1 /* T2URLRequest.h */,
-				B5BB0389149EBD0D000F7DD1 /* T2URLRequest.m */,
-				B5BB038A149EBD0D000F7DD1 /* T2URLRequestDataUpload.h */,
-				B5BB038B149EBD0D000F7DD1 /* T2URLRequestDataUpload.m */,
-				B5BB038E149EBD0D000F7DD1 /* T2URLResponse.h */,
-				B5BB038F149EBD0D000F7DD1 /* T2URLResponse.m */,
-				B5E05007149EBFEB00EA6072 /* T2URLXMLParser.h */,
-				B5E05008149EBFEB00EA6072 /* T2URLXMLParser.m */,
+				B5BB0386149EBD0D000F7DD1 /* NFURLConnection.h */,
+				B5BB0387149EBD0D000F7DD1 /* NFURLConnection.m */,
+				B5BB0388149EBD0D000F7DD1 /* NFURLRequest.h */,
+				B5BB0389149EBD0D000F7DD1 /* NFURLRequest.m */,
+				B5BB038A149EBD0D000F7DD1 /* NFURLRequestDataUpload.h */,
+				B5BB038B149EBD0D000F7DD1 /* NFURLRequestDataUpload.m */,
+				B5BB038E149EBD0D000F7DD1 /* NFURLResponse.h */,
+				B5BB038F149EBD0D000F7DD1 /* NFURLResponse.m */,
+				B5E05007149EBFEB00EA6072 /* NFURLXMLParser.h */,
+				B5E05008149EBFEB00EA6072 /* NFURLXMLParser.m */,
 				B5BB039C149EBD13000F7DD1 /* Supporting Files */,
 			);
-			path = T2URLConnection;
+			path = NFURLConnection;
 			sourceTree = "<group>";
 		};
 		B5BB039C149EBD13000F7DD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB0385149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch */,
+				B5BB0385149EBD0D000F7DD1 /* NFURLConnection-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B5BB039D149EBD2B000F7DD1 /* T2URLConnectionTests */ = {
+		B5BB039D149EBD2B000F7DD1 /* NFURLConnectionTests */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB03A0149EBD2B000F7DD1 /* T2URLConnectionTests.h */,
-				B5BB03A1149EBD2B000F7DD1 /* T2URLConnectionTests.m */,
+				B5BB03A0149EBD2B000F7DD1 /* NFURLConnectionTests.h */,
+				B5BB03A1149EBD2B000F7DD1 /* NFURLConnectionTests.m */,
 				B5BB03A6149EBD39000F7DD1 /* Supporting Files */,
 			);
-			path = T2URLConnectionTests;
+			path = NFURLConnectionTests;
 			sourceTree = "<group>";
 		};
 		B5BB03A6149EBD39000F7DD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB03A2149EBD2B000F7DD1 /* T2URLConnectionTests-Info.plist */,
+				B5BB03A2149EBD2B000F7DD1 /* NFURLConnectionTests-Info.plist */,
 				B5BB039E149EBD2B000F7DD1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B5C2B49614FB34B400DBB257 /* T2URLConnectionTestApp */ = {
+		B5C2B49614FB34B400DBB257 /* NFURLConnectionTestApp */ = {
 			isa = PBXGroup;
 			children = (
 				B5C2B49F14FB34B400DBB257 /* AppDelegate.h */,
 				B5C2B4A014FB34B400DBB257 /* AppDelegate.m */,
 				B5C2B4A814FB34B400DBB257 /* ViewController.h */,
 				B5C2B4A914FB34B400DBB257 /* ViewController.m */,
+				B5C2B4C714FB369300DBB257 /* ViewController.xib */,
+				B504D28E17977BD7002CC17C /* images */,
 				B5C2B49714FB34B400DBB257 /* Supporting Files */,
 			);
-			path = T2URLConnectionTestApp;
+			path = NFURLConnectionTestApp;
 			sourceTree = "<group>";
 		};
 		B5C2B49714FB34B400DBB257 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B5C2B49814FB34B400DBB257 /* T2URLConnectionTestApp-Info.plist */,
+				B5C2B49814FB34B400DBB257 /* NFURLConnectionTestApp-Info.plist */,
 				B5C2B49914FB34B400DBB257 /* InfoPlist.strings */,
 				B5C2B49C14FB34B400DBB257 /* main.m */,
-				B5C2B49E14FB34B400DBB257 /* T2URLConnectionTestApp-Prefix.pch */,
+				B5C2B49E14FB34B400DBB257 /* NFURLConnectionTestApp-Prefix.pch */,
 				B5C2B4C514FB351900DBB257 /* MainWindow-iPhone.xib */,
-				B5C2B4C714FB369300DBB257 /* ViewController.xib */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B5E0500E149EC2C700EA6072 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B5E05018149EC2C800EA6072 /* SBJson.framework */,
-				B5E0501A149EC2C800EA6072 /* SBJsonTests.octest */,
-				B5E0501C149EC2C800EA6072 /* libsbjson-ios.a */,
-				B5E0501E149EC2C800EA6072 /* sbjson-iosTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,21 +245,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5BB0390149EBD0D000F7DD1 /* T2URLConnection-Prefix.pch in Headers */,
-				B5BB0391149EBD0D000F7DD1 /* T2URLConnection.h in Headers */,
-				B5BB0393149EBD0D000F7DD1 /* T2URLRequest.h in Headers */,
-				B5BB0395149EBD0D000F7DD1 /* T2URLRequestDataUpload.h in Headers */,
-				B5BB0399149EBD0D000F7DD1 /* T2URLResponse.h in Headers */,
-				B5E05009149EBFEB00EA6072 /* T2URLXMLParser.h in Headers */,
+				B5BB0390149EBD0D000F7DD1 /* NFURLConnection-Prefix.pch in Headers */,
+				B5BB0391149EBD0D000F7DD1 /* NFURLConnection.h in Headers */,
+				B5BB0393149EBD0D000F7DD1 /* NFURLRequest.h in Headers */,
+				B5BB0395149EBD0D000F7DD1 /* NFURLRequestDataUpload.h in Headers */,
+				B5BB0399149EBD0D000F7DD1 /* NFURLResponse.h in Headers */,
+				B5E05009149EBFEB00EA6072 /* NFURLXMLParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B5BB0332149EBA5E000F7DD1 /* T2URLConnection */ = {
+		B5BB0332149EBA5E000F7DD1 /* NFURLConnection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5BB0357149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnection" */;
+			buildConfigurationList = B5BB0357149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "NFURLConnection" */;
 			buildPhases = (
 				B5BB032F149EBA5E000F7DD1 /* Sources */,
 				B5BB0330149EBA5E000F7DD1 /* Frameworks */,
@@ -307,16 +268,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				B5E05020149EC2D000EA6072 /* PBXTargetDependency */,
 			);
-			name = T2URLConnection;
+			name = NFURLConnection;
 			productName = QueuedURLConnection;
-			productReference = B5BB0333149EBA5E000F7DD1 /* libT2URLConnection.a */;
+			productReference = B5BB0333149EBA5E000F7DD1 /* libNFURLConnection.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B5BB0342149EBA5E000F7DD1 /* T2URLConnectionTests */ = {
+		B5BB0342149EBA5E000F7DD1 /* NFURLConnectionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5BB035A149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnectionTests" */;
+			buildConfigurationList = B5BB035A149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "NFURLConnectionTests" */;
 			buildPhases = (
 				B5BB033E149EBA5E000F7DD1 /* Sources */,
 				B5BB033F149EBA5E000F7DD1 /* Frameworks */,
@@ -328,14 +288,14 @@
 			dependencies = (
 				B5BB034A149EBA5E000F7DD1 /* PBXTargetDependency */,
 			);
-			name = T2URLConnectionTests;
+			name = NFURLConnectionTests;
 			productName = QueuedURLConnectionTests;
-			productReference = B5BB0343149EBA5E000F7DD1 /* T2URLConnectionTests.octest */;
+			productReference = B5BB0343149EBA5E000F7DD1 /* NFURLConnectionTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		B5C2B48F14FB34B400DBB257 /* T2URLConnectionTestApp */ = {
+		B5C2B48F14FB34B400DBB257 /* NFURLConnectionTestApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5C2B4BF14FB34B500DBB257 /* Build configuration list for PBXNativeTarget "T2URLConnectionTestApp" */;
+			buildConfigurationList = B5C2B4BF14FB34B500DBB257 /* Build configuration list for PBXNativeTarget "NFURLConnectionTestApp" */;
 			buildPhases = (
 				B5C2B48C14FB34B400DBB257 /* Sources */,
 				B5C2B48D14FB34B400DBB257 /* Frameworks */,
@@ -346,9 +306,9 @@
 			dependencies = (
 				B5C2B4CA14FB391D00DBB257 /* PBXTargetDependency */,
 			);
-			name = T2URLConnectionTestApp;
+			name = NFURLConnectionTestApp;
 			productName = T2URLConnectionTestApp;
-			productReference = B5C2B49014FB34B400DBB257 /* T2URLConnectionTestApp.app */;
+			productReference = B5C2B49014FB34B400DBB257 /* NFURLConnectionTestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -360,7 +320,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = NextFaze;
 			};
-			buildConfigurationList = B5BB032D149EBA5E000F7DD1 /* Build configuration list for PBXProject "T2URLConnection" */;
+			buildConfigurationList = B5BB032D149EBA5E000F7DD1 /* Build configuration list for PBXProject "NFURLConnection" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -370,51 +330,14 @@
 			mainGroup = B5BB0328149EBA5E000F7DD1;
 			productRefGroup = B5BB0334149EBA5E000F7DD1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B5E0500E149EC2C700EA6072 /* Products */;
-					ProjectRef = B5E0500D149EC2C700EA6072 /* SBJson.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				B5BB0332149EBA5E000F7DD1 /* T2URLConnection */,
-				B5BB0342149EBA5E000F7DD1 /* T2URLConnectionTests */,
-				B5C2B48F14FB34B400DBB257 /* T2URLConnectionTestApp */,
+				B5BB0332149EBA5E000F7DD1 /* NFURLConnection */,
+				B5BB0342149EBA5E000F7DD1 /* NFURLConnectionTests */,
+				B5C2B48F14FB34B400DBB257 /* NFURLConnectionTestApp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B5E05018149EC2C800EA6072 /* SBJson.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SBJson.framework;
-			remoteRef = B5E05017149EC2C800EA6072 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5E0501A149EC2C800EA6072 /* SBJsonTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SBJsonTests.octest;
-			remoteRef = B5E05019149EC2C800EA6072 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5E0501C149EC2C800EA6072 /* libsbjson-ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libsbjson-ios.a";
-			remoteRef = B5E0501B149EC2C800EA6072 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5E0501E149EC2C800EA6072 /* sbjson-iosTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "sbjson-iosTests.octest";
-			remoteRef = B5E0501D149EC2C800EA6072 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B5BB0340149EBA5E000F7DD1 /* Resources */ = {
@@ -432,6 +355,7 @@
 				B5C2B49B14FB34B400DBB257 /* InfoPlist.strings in Resources */,
 				B5C2B4C614FB351900DBB257 /* MainWindow-iPhone.xib in Resources */,
 				B5C2B4C814FB369300DBB257 /* ViewController.xib in Resources */,
+				B504D29017977BD7002CC17C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,11 +382,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5BB0392149EBD0D000F7DD1 /* T2URLConnection.m in Sources */,
-				B5BB0394149EBD0D000F7DD1 /* T2URLRequest.m in Sources */,
-				B5BB0396149EBD0D000F7DD1 /* T2URLRequestDataUpload.m in Sources */,
-				B5BB039A149EBD0D000F7DD1 /* T2URLResponse.m in Sources */,
-				B5E0500A149EBFEB00EA6072 /* T2URLXMLParser.m in Sources */,
+				B5BB0392149EBD0D000F7DD1 /* NFURLConnection.m in Sources */,
+				B5BB0394149EBD0D000F7DD1 /* NFURLRequest.m in Sources */,
+				B5BB0396149EBD0D000F7DD1 /* NFURLRequestDataUpload.m in Sources */,
+				B5BB039A149EBD0D000F7DD1 /* NFURLResponse.m in Sources */,
+				B5E0500A149EBFEB00EA6072 /* NFURLXMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5BB03A4149EBD2B000F7DD1 /* T2URLConnectionTests.m in Sources */,
+				B5BB03A4149EBD2B000F7DD1 /* NFURLConnectionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,18 +413,13 @@
 /* Begin PBXTargetDependency section */
 		B5BB034A149EBA5E000F7DD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5BB0332149EBA5E000F7DD1 /* T2URLConnection */;
+			target = B5BB0332149EBA5E000F7DD1 /* NFURLConnection */;
 			targetProxy = B5BB0349149EBA5E000F7DD1 /* PBXContainerItemProxy */;
 		};
 		B5C2B4CA14FB391D00DBB257 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5BB0332149EBA5E000F7DD1 /* T2URLConnection */;
+			target = B5BB0332149EBA5E000F7DD1 /* NFURLConnection */;
 			targetProxy = B5C2B4C914FB391D00DBB257 /* PBXContainerItemProxy */;
-		};
-		B5E05020149EC2D000EA6072 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "sbjson-ios";
-			targetProxy = B5E0501F149EC2D000EA6072 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -580,12 +499,12 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/QueuedURLConnection.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				GCC_PREFIX_HEADER = "NFURLConnection/NFURLConnection-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "Frameworks/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = T2URLConnection;
+				PRODUCT_NAME = NFURLConnection;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -596,12 +515,12 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/QueuedURLConnection.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
+				GCC_PREFIX_HEADER = "NFURLConnection/NFURLConnection-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "Frameworks/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = T2URLConnection;
+				PRODUCT_NAME = NFURLConnection;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -614,9 +533,9 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
-				INFOPLIST_FILE = "T2URLConnectionTests/T2URLConnectionTests-Info.plist";
-				PRODUCT_NAME = T2URLConnectionTests;
+				GCC_PREFIX_HEADER = "NFURLConnection/T2URLConnection-Prefix.pch";
+				INFOPLIST_FILE = "NFURLConnectionTests/NFURLConnectionTests-Info.plist";
+				PRODUCT_NAME = NFURLConnectionTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -629,9 +548,9 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "T2URLConnection/T2URLConnection-Prefix.pch";
-				INFOPLIST_FILE = "T2URLConnectionTests/T2URLConnectionTests-Info.plist";
-				PRODUCT_NAME = T2URLConnectionTests;
+				GCC_PREFIX_HEADER = "NFURLConnection/T2URLConnection-Prefix.pch";
+				INFOPLIST_FILE = "NFURLConnectionTests/NFURLConnectionTests-Info.plist";
+				PRODUCT_NAME = NFURLConnectionTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -646,11 +565,11 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "T2URLConnectionTestApp/T2URLConnectionTestApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "NFURLConnectionTestApp/NFURLConnectionTestApp-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				INFOPLIST_FILE = "T2URLConnectionTestApp/T2URLConnectionTestApp-Info.plist";
+				INFOPLIST_FILE = "NFURLConnectionTestApp/NFURLConnectionTestApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NFURLConnectionTestApp;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -666,12 +585,12 @@
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "T2URLConnectionTestApp/T2URLConnectionTestApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "NFURLConnectionTestApp/NFURLConnectionTestApp-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				INFOPLIST_FILE = "T2URLConnectionTestApp/T2URLConnectionTestApp-Info.plist";
+				INFOPLIST_FILE = "NFURLConnectionTestApp/NFURLConnectionTestApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NFURLConnectionTestApp;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -680,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5BB032D149EBA5E000F7DD1 /* Build configuration list for PBXProject "T2URLConnection" */ = {
+		B5BB032D149EBA5E000F7DD1 /* Build configuration list for PBXProject "NFURLConnection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5BB0355149EBA5E000F7DD1 /* Debug */,
@@ -689,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5BB0357149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnection" */ = {
+		B5BB0357149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "NFURLConnection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5BB0358149EBA5E000F7DD1 /* Debug */,
@@ -698,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5BB035A149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "T2URLConnectionTests" */ = {
+		B5BB035A149EBA5E000F7DD1 /* Build configuration list for PBXNativeTarget "NFURLConnectionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5BB035B149EBA5E000F7DD1 /* Debug */,
@@ -707,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5C2B4BF14FB34B500DBB257 /* Build configuration list for PBXNativeTarget "T2URLConnectionTestApp" */ = {
+		B5C2B4BF14FB34B500DBB257 /* Build configuration list for PBXNativeTarget "NFURLConnectionTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5C2B4C014FB34B500DBB257 /* Debug */,

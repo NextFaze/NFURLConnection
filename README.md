@@ -1,9 +1,9 @@
-T2URLConnection
+NFURLConnection
 ===============
 
-T2URLConnection - basic framework for sending network requests and parsing responses
+NFURLConnection - basic framework for sending network requests and parsing responses
 
-T2URLConnection has a similar architecture to NSURLConnection, but with extra features:
+NFURLConnection has a similar architecture to NSURLConnection, but with extra features:
 * an NSOperationQueue to control concurrent network requests, set up dependencies, and priorities etc.
 * constructs query part of url request from given parameters
 * automatically decode XML and JSON responses.
@@ -18,16 +18,16 @@ External requirements:
 Installation
 ------------
 
-    > git clone git://github.com/NextFaze/T2URLConnction.git
-    > cd T2URLConnction
+    > git clone git://github.com/NextFaze/NFURLConnction.git
+    > cd NFURLConnction
     > git submodule init
     > git submodule update
 
-T2URLConnction is a Cocoa Touch Static Library project, and can be incorporated into other xcode projects in the usual ways.
+NFURLConnction is a Cocoa Touch Static Library project, and can be incorporated into other xcode projects in the usual ways.
 
 Notes:
-- ensure T2URLConnection is added as Target Dependency
-- ensure libT2URLSConnection.a is added to Link Binary With Libraries
+- ensure NFURLConnection is added as Target Dependency
+- ensure libNFURLSConnection.a is added to Link Binary With Libraries
 - in Build Settings, Other Linker Flags, add: -all_load
 
 Synopsis
@@ -41,11 +41,11 @@ Synopsis
     } RequestType;
 
     // create a url connection:
-    T2URLConnection *conn = [[T2URLConnection alloc] init];
+    NFURLConnection *conn = [[NFURLConnection alloc] init];
     conn.delegate = self;   // optional
     
     // create a request
-    T2URLRequest *req = [[[T2URLRequest alloc] init] autorelease];
+    NFURLRequest *req = [[[NFURLRequest alloc] init] autorelease];
     req.URL = [NSURL URLWithString:@"http://www.google.com/"];
     req.HTTPMethod = @"GET"; 
     req.requestType = RequestType1;   // optionally assign a request type
@@ -55,7 +55,7 @@ Synopsis
     [conn sendRequest:req];
 
     // send a request synchronously
-    T2URLResponse *response = [conn sendSynchronousRequest:req];
+    NFURLResponse *response = [conn sendSynchronousRequest:req];
     
     // accessing data structures from the response
     id data = response.object;   // NSArray or NSDictionary if response body is json or xml
@@ -64,11 +64,11 @@ Synopsis
     // the response object contains a reference to the request:
     NSLog(@"request type is: %d", response.request.requestType);
 
-When using a delegate and asynchronous requests, implement the T2URLConnectionDelegate protocol:
+When using a delegate and asynchronous requests, implement the NFURLConnectionDelegate protocol:
 
     // delegate method
-    - (void)t2URLConnection:(T2URLConnection *)connection requestCompleted:(T2URLRequest *)request {
-        T2URLResponse *response = request.response;
+    - (void)NFURLConnection:(NFURLConnection *)connection requestCompleted:(NFURLRequest *)request {
+        NFURLResponse *response = request.response;
         
         ...
     }
@@ -76,7 +76,7 @@ When using a delegate and asynchronous requests, implement the T2URLConnectionDe
 Network Queue
 -------------
 
-The queue property of T2URLConnection is a NSOperationQueue, and can be accessed to modify the number of concurrent network operations sent by the connection (when sending asynchronous requests).  Each T2URLRequest is a NSOperation, and dependencies can be set up between them in the normal way.
+The queue property of NFURLConnection is a NSOperationQueue, and can be accessed to modify the number of concurrent network operations sent by the connection (when sending asynchronous requests).  Each NFURLRequest is a NSOperation, and dependencies can be set up between them in the normal way.
 
 License
 -------

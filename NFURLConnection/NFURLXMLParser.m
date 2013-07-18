@@ -1,23 +1,23 @@
 //
-//  T2URLXMLParser.m
+//  NFURLXMLParser.m
 //
 //  Created by Andrew Williams on 15/09/11.
 //  Copyright 2011 NextFaze. All rights reserved.
 //
 // based on http://troybrant.net/blog/2010/09/simple-xml-to-nsdictionary-converter/
 
-#import "T2URLXMLParser.h"
+#import "NFURLXMLParser.h"
 //#import "NSMutableString+CharacterEntityConverter.h"
 
-#define T2URLXMLParserTextKey @"text"
+#define NFURLXMLParserTextKey @"text"
 
-@interface T2URLXMLParser (T2URL)
+@interface NFURLXMLParser (NFURL)
 - (id)compactArray:(NSArray *)src;
 - (id)compactDictionary:(NSDictionary *)src;
 - (NSDictionary *)objectWithData:(NSData *)data;
 @end
 
-@implementation T2URLXMLParser
+@implementation NFURLXMLParser
 
 @synthesize error;
 
@@ -71,7 +71,7 @@
 
 - (id)compactDictionary:(NSDictionary *)src {
     
-    NSString *text = [src valueForKey:T2URLXMLParserTextKey];
+    NSString *text = [src valueForKey:NFURLXMLParserTextKey];
     if([src count] == 1 && text) {
         // dictionary with single key 'text' - convert to string
         return text;
@@ -201,7 +201,7 @@
     if ([textInProgress length] > 0)
     {
         NSString *text = [textInProgress stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [dictInProgress setObject:text forKey:T2URLXMLParserTextKey];
+        [dictInProgress setObject:text forKey:NFURLXMLParserTextKey];
         
         // Reset the text
         [textInProgress release];

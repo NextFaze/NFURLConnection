@@ -1,16 +1,15 @@
 //
-//  T2URLResponse.m
+//  NFURLResponse.m
 //
 //  Created by Andrew Williams on 15/09/11.
 //  Copyright 2011 NextFaze. All rights reserved.
 //
 
-#import "T2URLResponse.h"
-#import "T2URLXMLParser.h"
-#import "SBJson.h"
+#import "NFURLResponse.h"
+#import "NFURLXMLParser.h"
 #import <UIKit/UIKit.h>
 
-@implementation T2URLResponse
+@implementation NFURLResponse
 
 @synthesize error, data, httpResponse;
 
@@ -55,14 +54,12 @@
     
     if([contentType isEqualToString:@"application/json"] ||
        [contentType isEqualToString:@"text/json"]) {
-        SBJsonParser *parser = [[SBJsonParser alloc] init];
-        object = [parser objectWithString:body];
-        [parser release];
+        object = data ? [NSJSONSerialization JSONObjectWithData:data options:0 error:nil] : nil;
     }
     else if([contentType isEqualToString:@"application/xml"] ||
             [contentType isEqualToString:@"text/xml"] ||
             [contentType hasSuffix:@"+xml"]) {
-        T2URLXMLParser *parser = [[T2URLXMLParser alloc] init];
+        NFURLXMLParser *parser = [[NFURLXMLParser alloc] init];
         NSDictionary *dict = [parser dictionaryForXMLString:body];
         [parser release];
         object = dict;

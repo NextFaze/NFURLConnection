@@ -1,5 +1,5 @@
 //
-//  T2URLXMLParser.h
+//  NFURLXMLParser.h
 //
 //  Created by Andrew Williams on 15/09/11.
 //  Copyright 2011 NextFaze. All rights reserved.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface T2URLXMLParser : NSObject <NSXMLParserDelegate>
+@interface NFURLXMLParser : NSObject <NSXMLParserDelegate>
 {
     NSMutableArray *dictionaryStack;
     NSMutableString *textInProgress;

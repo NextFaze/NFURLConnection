@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  T2URLConnectionTestApp
+//  NFURLConnectionTestApp
 //
 //  Created by Andrew Williams on 27/02/12.
 //  Copyright (c) 2012 NextFaze. All rights reserved.
@@ -19,8 +19,9 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self) {
-        connection = [[T2URLConnection alloc] init];
+        connection = [[NFURLConnection alloc] init];
         connection.delegate = self;
+        self.title = @"NFURLConnection";
     }
     return self;
 }
@@ -72,20 +73,21 @@
         [textField resignFirstResponder];
         
         NSURL *url = [NSURL URLWithString:textField.text];
-        T2URLRequest *req = [T2URLRequest requestWithURL:url];
+        NFURLRequest *req = [NFURLRequest requestWithURL:url];
         [connection sendRequest:req];
         
         LOG(@"sending request to: %@", url);
     }
 }
 
-#pragma mark - T2URLConnectionDelegate
+#pragma mark - NFURLConnectionDelegate
 
-- (void)t2URLConnection:(T2URLConnection *)connection requestCompleted:(T2URLRequest *)request {
+- (void)NFURLConnection:(NFURLConnection *)connection requestCompleted:(NFURLRequest *)request {
     CGRect frame = label.frame;
     
     LOG(@"request completed");
     LOG(@"response: %@", request.response.body);
+    LOG(@"response content type: %@", request.response.contentType);
     
     if(request.response.error) {
         UIAlertView *alert = [[UIAlertView alloc] init];

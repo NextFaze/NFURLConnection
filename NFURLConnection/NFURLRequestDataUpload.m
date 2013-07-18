@@ -1,18 +1,18 @@
 //
-//  T2URLRequestDataUpload.m
+//  NFURLRequestDataUpload.m
 //
 //  Created by Andrew Williams on 14/10/11.
 //  Copyright (c) 2011 NextFaze. All rights reserved.
 //
 
-#import "T2URLRequestDataUpload.h"
+#import "NFURLRequestDataUpload.h"
 
-@implementation T2URLRequestDataUpload
+@implementation NFURLRequestDataUpload
 
 @synthesize contentType, data, filename;
 
-+ (T2URLRequestDataUpload *)dataWithContentType:(NSString *)contentType data:(NSData *)data {
-    T2URLRequestDataUpload *p = [[[self alloc] init] autorelease];
++ (NFURLRequestDataUpload *)dataWithContentType:(NSString *)contentType data:(NSData *)data {
+    NFURLRequestDataUpload *p = [[[self alloc] init] autorelease];
     p.contentType = contentType;
     p.data = data;
     return p;

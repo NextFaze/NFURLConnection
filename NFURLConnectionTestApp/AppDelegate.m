@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  T2URLConnectionTestApp
+//  NFURLConnectionTestApp
 //
 //  Created by Andrew Williams on 27/02/12.
 //  Copyright (c) 2012 NextFaze. All rights reserved.
