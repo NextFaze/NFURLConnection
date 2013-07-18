@@ -10,7 +10,7 @@
 
 #define NFURLRequestDefaultContentType @"application/x-www-form-urlencoded"
 
-@interface NFURLRequest : NSOperation <NSURLConnectionDelegate>
+@interface NFURLRequest : NSOperation <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (nonatomic, retain) NSMutableURLRequest *req;
 @property (nonatomic, assign) int requestType;
