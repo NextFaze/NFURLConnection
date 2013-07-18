@@ -6,6 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+typedef enum {
+    NFURLResponseRemoveNSNulls = (1UL << 0),
+    NFURLResponseTrimStrings = (1UL << 1),
+    NFURLResponseRemoveEmptyStrings = (1UL << 2),
+
+    NFURLResponseSanitize = NFURLResponseRemoveNSNulls | NFURLResponseTrimStrings | NFURLResponseRemoveEmptyStrings
+    
+} NFURLResponseReadingOptions;
 
 @interface NFURLResponse : NSObject
 
@@ -16,6 +26,12 @@
 - (NSString *)body;
 - (NSString *)contentType;
 - (NSDictionary *)headers;
+
 - (id)object;
+- (id)object:(NFURLResponseReadingOptions)options;
+
+- (NSDictionary *)dictionaryObject:(NFURLResponseReadingOptions)options;
+- (NSArray *)arrayObject:(NFURLResponseReadingOptions)options;
+- (UIImage *)imageObject:(NFURLResponseReadingOptions)options;
 
 @end

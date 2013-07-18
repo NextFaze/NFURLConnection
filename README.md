@@ -11,17 +11,10 @@ NFURLConnection has a similar architecture to NSURLConnection, but with extra fe
 * ability to construct multipart form body (including binary data) for POST requests
 * network responses are tied to the original request, so calling code can easily work with multiple concurrent requests.
 
-External requirements:
-
-* json-framework
-
 Installation
 ------------
 
-    > git clone git://github.com/NextFaze/NFURLConnction.git
-    > cd NFURLConnction
-    > git submodule init
-    > git submodule update
+    > git clone git://github.com/NextFazeSD/NFURLConnction.git
 
 NFURLConnction is a Cocoa Touch Static Library project, and can be incorporated into other xcode projects in the usual ways.
 
