@@ -32,7 +32,6 @@
 - (id)initWithURL:(NSURL *)url;
 - (id)initWithRequestType:(int)requestType;
 
-- (void)setParameters:(NSDictionary *)params;
 - (void)setParameterValue:(id)value forKey:(NSString *)key;
 
 - (NSURLRequest *)urlRequest;

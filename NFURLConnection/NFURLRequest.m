@@ -289,10 +289,6 @@ typedef enum {
     return self.req;
 }
 
-- (void)setParameters:(NSDictionary *)params {
-    self.parameters = params;
-}
-
 - (void)setParameterValue:(id)value forKey:(NSString *)key {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:self.parameters];
     [dict setValue:value forKey:key];
