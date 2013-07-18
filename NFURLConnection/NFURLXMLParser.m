@@ -126,7 +126,7 @@
     
     // Parse the XML
     //data = [self fixBadXML:data];
-    self.parser = [[NSXMLParser alloc] initWithData:data];
+    self.parser = [[[NSXMLParser alloc] initWithData:data] autorelease];
     self.parser.delegate = self;
     BOOL success = [self.parser parse];
 
@@ -200,8 +200,7 @@
         [dictInProgress setObject:text forKey:NFURLXMLParserTextKey];
         
         // Reset the text
-        [self.textInProgress release];
-        self.textInProgress = [[NSMutableString alloc] init];
+        self.textInProgress = [NSMutableString string];
     }
     
     // Pop the current dict
