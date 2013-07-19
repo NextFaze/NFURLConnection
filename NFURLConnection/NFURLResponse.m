@@ -84,8 +84,8 @@
     return [self objectOfClass:[NSArray class] options:options];
 }
 
-- (UIImage *)imageObject:(NFURLResponseReadingOptions)options {
-    return [self objectOfClass:[UIImage class] options:options];
+- (UIImage *)imageObject {
+    return [self objectOfClass:[UIImage class] options:0];
 }
 
 #pragma mark -

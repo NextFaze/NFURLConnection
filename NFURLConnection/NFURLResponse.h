@@ -32,6 +32,6 @@ typedef enum {
 
 - (NSDictionary *)dictionaryObject:(NFURLResponseReadingOptions)options;
 - (NSArray *)arrayObject:(NFURLResponseReadingOptions)options;
-- (UIImage *)imageObject:(NFURLResponseReadingOptions)options;
+- (UIImage *)imageObject;
 
 @end
