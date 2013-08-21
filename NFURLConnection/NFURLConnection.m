@@ -78,7 +78,13 @@
 
 - (void)sendRequest:(NFURLRequest *)request {
     [request addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
-    [self.queue addOperation:request];
+    
+    @try {
+        [self.queue addOperation:request];
+    }
+    @catch (NSException *exception) {
+        LOG(@"Operation error %@", exception);
+    }
 }
 
 #pragma mark - KVO
