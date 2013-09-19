@@ -401,10 +401,11 @@ typedef enum {
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)res {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)res;
     if ([res respondsToSelector:@selector(allHeaderFields)]) {
-        NSDictionary *dictionary = [httpResponse allHeaderFields];
-        int code = [httpResponse statusCode];
         self.response.httpResponse = httpResponse;
-        LOG(@"response code: %d, content length: %@", code, [dictionary valueForKey:@"Content-Length"]);
+#if DEBUG
+        NSDictionary *dictionary = [httpResponse allHeaderFields];
+        LOG(@"response code: %d, content length: %@", [httpResponse statusCode], [dictionary valueForKey:@"Content-Length"]);
+#endif
     }
 }
 
