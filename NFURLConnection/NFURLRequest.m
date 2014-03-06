@@ -331,7 +331,7 @@ typedef enum {
     request.response = response;
 
     //LOG(@"response body: %@", [response body]);
-    LOG(@"response code: %d", [response.httpResponse statusCode]);
+    LOG(@"response code: %ld", (long) [response.httpResponse statusCode]);
     if(response.error) LOG(@"response error: %@", response.error);
     LOG(@"request finished");
 
@@ -404,7 +404,7 @@ typedef enum {
         self.response.httpResponse = httpResponse;
 #if DEBUG
         NSDictionary *dictionary = [httpResponse allHeaderFields];
-        LOG(@"response code: %d, content length: %@", [httpResponse statusCode], [dictionary valueForKey:@"Content-Length"]);
+        LOG(@"response code: %ld, content length: %@", (long) [httpResponse statusCode], [dictionary valueForKey:@"Content-Length"]);
 #endif
     }
 }
@@ -425,7 +425,7 @@ typedef enum {
     
     if ([challenge previousFailureCount] > 0) {
         // handle bad credentials here
-        LOG(@"failure count: %d", [challenge previousFailureCount]);
+        LOG(@"failure count: %ld", (long) [challenge previousFailureCount]);
         [[challenge sender] cancelAuthenticationChallenge:challenge];
         return;
     }
