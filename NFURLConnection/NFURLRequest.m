@@ -22,16 +22,16 @@ typedef enum {
 @implementation NFURLRequest
 
 + (NFURLRequest *)request {
-    return [[[self alloc] init] autorelease];
+    return [[self alloc] init];
 }
 + (NFURLRequest *)requestWithURL:(NSURL *)url {
-    return [[[self alloc] initWithURL:url] autorelease];
+    return [[self alloc] initWithURL:url];
 }
 + (NFURLRequest *)requestWithURL:(NSURL *)url parameters:(NSDictionary *)params {
-    return [[[self alloc] initWithURL:url parameters:params] autorelease];
+    return [[self alloc] initWithURL:url parameters:params];
 }
 + (NFURLRequest *)requestWithType:(int)requestType {
-    return [[[self alloc] initWithRequestType:requestType] autorelease];
+    return [[self alloc] initWithRequestType:requestType];
 }
 
 - (id)init {
@@ -42,10 +42,8 @@ typedef enum {
         self.contentType = NFURLRequestDefaultContentType;
         
         // create a boundary string for multipart form data
-        CFUUIDRef uuid = CFUUIDCreate(nil);
-        NSString *uuidString = [(NSString*)CFUUIDCreateString(nil, uuid) autorelease];
-        CFRelease(uuid);
-        _stringBoundary = [[NSString stringWithFormat:@"0xKhTmLbOuNdArY-%@", uuidString] retain];
+        NSString *uuidString = [[NSUUID UUID] UUIDString];
+        _stringBoundary = [NSString stringWithFormat:@"0xKhTmLbOuNdArY-%@", uuidString];
     }
     return self;
 }
@@ -74,15 +72,6 @@ typedef enum {
     return self;
 }
 
-- (void)dealloc {
-    [_req release];
-    [_parameters release];
-    [_stringBoundary release];
-    [_tag release];
-    
-    [super dealloc];
-}
-
 #pragma mark - 
 
 - (void)setURL:(NSURL *)URL {
@@ -109,9 +98,16 @@ typedef enum {
     return [self.req valueForHTTPHeaderField:@"Content-Type"];
 }
 
-- (NSString*)urlEscape:(NSString *)str {            
-    return [(NSString *) CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef) str,
-                                                                 NULL, CFSTR("￼=,!$&'()*+;@?\n\"<>#\t :/"), kCFStringEncodingUTF8) autorelease];
+-(NSString *)urlEncodeString:(NSString *)str usingEncoding:(NSStringEncoding)encoding {
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                               (CFStringRef)str,
+                                                               NULL,
+                                                               (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
+                                                               CFStringConvertNSStringEncodingToEncoding(encoding)));
+}
+
+- (NSString *)urlEscape:(NSString *)str {
+    return [self urlEncodeString:str usingEncoding:NSUTF8StringEncoding];
 }
 
 - (BOOL)haveBinaryParameters {
@@ -154,20 +150,25 @@ typedef enum {
                 [value isKindOfClass:[NFURLRequestDataUpload class]]) {
 
             NSString *partContentType = @"application/octet-stream";
-            NSString *filename = @"filename";
+            NSString *filename = nil;
             NSData *dataValue = nil;
 
             if([value isKindOfClass:[NFURLRequestDataUpload class]]) {
                 NFURLRequestDataUpload *du = (NFURLRequestDataUpload *)value;
                 dataValue = du.data;
-                filename = du.filename ? du.filename : filename;
+                filename = du.filename;
                 partContentType = du.contentType;
             }
             else {
                 dataValue = value;
             }
             
-            NSString *disposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n", key, filename];
+            NSMutableString *disposition = [NSMutableString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"", key];
+            if(filename) {
+                [disposition appendFormat:@"; filename=\"%@\"", filename];
+            }
+            [disposition appendFormat:@"\r\n"];
+            
             [data appendData:[disposition dataUsingEncoding:NSUTF8StringEncoding]];
             [data appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", partContentType] dataUsingEncoding:NSUTF8StringEncoding]];
 
@@ -182,6 +183,7 @@ typedef enum {
 	}
 	
     [data appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", self.stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+
     [self.req setHTTPBody:data];
 }
 
@@ -247,7 +249,6 @@ typedef enum {
             NSString *path = [NSString stringWithFormat:@"%@?%@", baseURL, query];
             NSURL *newURL = [[NSURL alloc] initWithString:path];
             [self.req setURL:newURL];
-            [newURL release];
         }
     }
     else if(self.req.HTTPBody == nil && [self.parameters count]) {
@@ -270,7 +271,7 @@ typedef enum {
 
             case NFURLRequestContentTypeJSON: {
                 self.req.HTTPBody = [NSJSONSerialization dataWithJSONObject:self.parameters options:0 error:nil];
-                LOG(@"using http body: %@", [[[NSString alloc] initWithData:self.req.HTTPBody encoding:NSUTF8StringEncoding] autorelease]);
+                LOG(@"using http body: %@", [[NSString alloc] initWithData:self.req.HTTPBody encoding:NSUTF8StringEncoding]);
                 break;
             }
 
@@ -323,7 +324,7 @@ typedef enum {
     NSURLResponse *res = nil;
     NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:&res error:&err];
     
-    NFURLResponse *response = [[[NFURLResponse alloc] init] autorelease];
+    NFURLResponse *response = [[NFURLResponse alloc] init];
     response.httpResponse = (NSHTTPURLResponse *)res;
     response.data = [NSMutableData dataWithData:data];
     response.error = err;
@@ -340,20 +341,18 @@ typedef enum {
 
 - (void)sendAsynchronousRequest {
     
-    self.response = [[[NFURLResponse alloc] init] autorelease];
+    self.response = [[NFURLResponse alloc] init];
     self.response.data = [NSMutableData data];
     
     NSURLRequest *urlRequest = [self urlRequest];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:NO];
     [conn scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [conn start];
-    [conn release];
 
     LOG(@"done");
 }
 
 - (void)performRequest {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     LOG(@"starting");
     
     if(![self isCancelled] || [[NSThread currentThread] isCancelled]) {
@@ -366,8 +365,6 @@ typedef enum {
         [self finish];
     }
      */
-    
-    [pool release];
 }
 
 #pragma mark NSOperation

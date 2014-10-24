@@ -29,9 +29,6 @@
     _delegate = nil;
 
     [self cancelAllOperations];
-    [_queue release];
-    
-    [super dealloc];
 }
 
 #pragma mark -

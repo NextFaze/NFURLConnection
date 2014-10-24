@@ -21,19 +21,7 @@
 
 @implementation NFURLXMLParser
 
-#pragma mark -
-
-- (void)dealloc {
-    [_parser release];
-    [_dictionaryStack release];
-    [_textInProgress release];
-    [_error release];
-
-    [super dealloc];
-}
-
-#pragma mark -
-#pragma mark Public methods
+#pragma mark - Public methods
 
 - (NSDictionary *)dictionaryForXMLData:(NSData *)data
 {
@@ -58,13 +46,14 @@
 - (id)compactArray:(NSArray *)src {
     NSMutableArray *ret = [NSMutableArray array];
     for(id obj in src) {
+        id compact = obj;
         if([obj isKindOfClass:[NSDictionary class]]) {
-            obj = [self compactDictionary:obj];
+            compact = [self compactDictionary:compact];
         }
         else if([obj isKindOfClass:[NSArray class]]) {
-            obj = [self compactArray:obj];
+            compact = [self compactArray:compact];
         }
-        [ret addObject:obj];
+        [ret addObject:compact];
     }
     return ret;
 }
@@ -126,7 +115,7 @@
     
     // Parse the XML
     //data = [self fixBadXML:data];
-    self.parser = [[[NSXMLParser alloc] initWithData:data] autorelease];
+    self.parser = [[NSXMLParser alloc] initWithData:data];
     self.parser.delegate = self;
     BOOL success = [self.parser parse];
 

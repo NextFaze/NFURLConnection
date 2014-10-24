@@ -11,18 +11,8 @@
 
 @implementation NFURLResponse
 
-- (void)dealloc {
-    [_data release];
-    [_httpResponse release];
-    [_error release];
-    
-    [super dealloc];
-}
-
-#pragma mark -
-
 - (NSString *)body {
-    NSString *body = [[[NSString alloc] initWithBytes:[self.data bytes] length:[self.data length] encoding:NSUTF8StringEncoding] autorelease];
+    NSString *body = [[NSString alloc] initWithBytes:[self.data bytes] length:[self.data length] encoding:NSUTF8StringEncoding];
     return body;
 }
 
@@ -64,7 +54,6 @@
             [contentType hasSuffix:@"+xml"]) {
         NFURLXMLParser *parser = [[NFURLXMLParser alloc] init];
         NSDictionary *dict = [parser dictionaryForXMLString:body];
-        [parser release];
         object = dict;
     }
     else if([contentType hasPrefix:@"image/"]) {
