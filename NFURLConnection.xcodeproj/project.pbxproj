@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B504D29017977BD7002CC17C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B504D28F17977BD7002CC17C /* Default-568h@2x.png */; };
+		B5745DF61A9C020400646A04 /* NSString+NFURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5745DF41A9C020400646A04 /* NSString+NFURLConnection.h */; };
+		B5745DF71A9C020400646A04 /* NSString+NFURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5745DF51A9C020400646A04 /* NSString+NFURLConnection.m */; };
 		B5BB0337149EBA5E000F7DD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0336149EBA5E000F7DD1 /* Foundation.framework */; };
 		B5BB0345149EBA5E000F7DD1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0344149EBA5E000F7DD1 /* SenTestingKit.framework */; };
 		B5BB0347149EBA5E000F7DD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB0346149EBA5E000F7DD1 /* UIKit.framework */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		B504D28F17977BD7002CC17C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B5745DF41A9C020400646A04 /* NSString+NFURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NFURLConnection.h"; sourceTree = "<group>"; };
+		B5745DF51A9C020400646A04 /* NSString+NFURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NFURLConnection.m"; sourceTree = "<group>"; };
 		B5BB0333149EBA5E000F7DD1 /* libNFURLConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNFURLConnection.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB0336149EBA5E000F7DD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5BB0343149EBA5E000F7DD1 /* NFURLConnectionTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFURLConnectionTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +184,8 @@
 				B5BB038F149EBD0D000F7DD1 /* NFURLResponse.m */,
 				B5E05007149EBFEB00EA6072 /* NFURLXMLParser.h */,
 				B5E05008149EBFEB00EA6072 /* NFURLXMLParser.m */,
+				B5745DF41A9C020400646A04 /* NSString+NFURLConnection.h */,
+				B5745DF51A9C020400646A04 /* NSString+NFURLConnection.m */,
 				B5BB039C149EBD13000F7DD1 /* Supporting Files */,
 			);
 			path = NFURLConnection;
@@ -247,6 +253,7 @@
 			files = (
 				B5BB0390149EBD0D000F7DD1 /* NFURLConnection-Prefix.pch in Headers */,
 				B5BB0391149EBD0D000F7DD1 /* NFURLConnection.h in Headers */,
+				B5745DF61A9C020400646A04 /* NSString+NFURLConnection.h in Headers */,
 				B5BB0393149EBD0D000F7DD1 /* NFURLRequest.h in Headers */,
 				B5BB0395149EBD0D000F7DD1 /* NFURLRequestDataUpload.h in Headers */,
 				B5BB0399149EBD0D000F7DD1 /* NFURLResponse.h in Headers */,
@@ -384,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BB0392149EBD0D000F7DD1 /* NFURLConnection.m in Sources */,
+				B5745DF71A9C020400646A04 /* NSString+NFURLConnection.m in Sources */,
 				B5BB0394149EBD0D000F7DD1 /* NFURLRequest.m in Sources */,
 				B5BB0396149EBD0D000F7DD1 /* NFURLRequestDataUpload.m in Sources */,
 				B5BB039A149EBD0D000F7DD1 /* NFURLResponse.m in Sources */,

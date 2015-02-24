@@ -8,6 +8,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class NFURLResponse;
+
+typedef void (^NFURLResponseHandler)(NFURLResponse *response);
+
 typedef enum {
     NFURLResponseRemoveNSNulls = (1UL << 0),
     NFURLResponseTrimStrings = (1UL << 1),
@@ -19,7 +23,7 @@ typedef enum {
 
 @interface NFURLResponse : NSObject
 
-@property (nonatomic, strong) NSMutableData *data;
+@property (nonatomic, strong) NSData *data;
 @property (nonatomic, strong) NSHTTPURLResponse *httpResponse;
 @property (nonatomic, strong) NSError *error;
 

@@ -7,90 +7,75 @@
 
 #import "NFURLConnection.h"
 
+#define NETWORK_TIMEOUT 30
+
+@interface NFURLConnection ()
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, assign) int requestCount;
+@end
+
 @implementation NFURLConnection
 
 - (id)init {
     self = [super init];
     if(self) {
-        _queue = [[NSOperationQueue alloc] init];
-    }
-    return self;
-}
-
-- (id)initWithDelegate:(NSObject<NFURLConnectionDelegate> *)d {
-    self = [self init];
-    if(self) {
-        self.delegate = d;
+        [self setupSession];
     }
     return self;
 }
 
 - (void)dealloc {
-    _delegate = nil;
-
     [self cancelAllOperations];
 }
 
-#pragma mark -
-
-- (void)notifyDelegate:(NFURLRequest *)req {
-    [self.delegate NFURLConnection:self requestCompleted:req];
+- (void)setupSession {
+    [self.session finishTasksAndInvalidate];
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    config.HTTPMaximumConnectionsPerHost = 3;
+    config.HTTPShouldUsePipelining = YES;
+    config.timeoutIntervalForRequest = NETWORK_TIMEOUT;
+    
+    self.session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
 }
 
 #pragma mark -
-
-- (int)executingRequestCount {
-    int count = 0;
-    for(NSOperation *op in self.queue.operations) {
-        if([op isExecuting]) count++;
-    }
-    return count;
-}
-
-- (int)outstandingRequestCount {
-    int count = 0;
-    for(NSOperation *op in self.queue.operations) {
-        if(![op isFinished]) count++;
-    }
-    return count;
-}
 
 - (void)cancelAllOperations {
     LOG(@"cancelling all operations");
-    for(NSOperation *op in self.queue.operations) {
-        if(!([op isFinished] || [op isCancelled])) {
-            LOG(@"cancelling operation: %@", op);
-            [op removeObserver:self forKeyPath:@"isFinished"];
-            [op cancel];
-        }
-    }
-    LOG(@"cancelling queue operations");
-    [self.queue cancelAllOperations];
+    [self.session invalidateAndCancel];
     LOG(@"done");
 }
 
-- (NFURLResponse *)sendSynchronousRequest:(NFURLRequest *)request {
-    return [NFURLRequest sendSynchronousRequest:request];
+- (void)updateNetworkCount:(int)count {
+    self.requestCount += count;
+    //[BJApp sharedApplication].networkActivityIndicatorVisible = self.requestCount > 0;
 }
 
 - (void)sendRequest:(NFURLRequest *)request {
-    [request addObserver:self forKeyPath:@"isFinished" options:0 context:nil];
-    
-    @try {
-        [self.queue addOperation:request];
-    }
-    @catch (NSException *exception) {
-        LOG(@"Operation error %@", exception);
-    }
+    [self sendRequest:request handler:nil];
 }
 
-#pragma mark - KVO
+- (void)sendRequest:(NFURLRequest *)request handler:(NFURLResponseHandler)handler {
+    [self updateNetworkCount:1];
+    NSURLSessionTask *task = [self.session dataTaskWithRequest:request completionHandler:
+                              ^(NSData *data, NSURLResponse *response, NSError *error) {
+                                  [self handleResponse:response data:data error:error request:request];
+                                  [self updateNetworkCount:-1];
+                              }];
+    [task resume];
+}
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if([keyPath isEqualToString:@"isFinished"]) {
-        NFURLRequest *req = object;
-        [self performSelectorOnMainThread:@selector(notifyDelegate:) withObject:req waitUntilDone:YES];
-    }
+- (void)handleResponse:(NSURLResponse *)response data:(NSData *)data error:(NSError *)error request:(NFURLRequest *)request
+{
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    NFURLResponse *r = [[NFURLResponse alloc] init]; //responseWithResponse:response data:data error:error];
+    r.data = data;
+    r.error = error;
+    r.httpResponse = httpResponse;
+
+    if(request.handler)
+        request.handler(r);
 }
 
 @end

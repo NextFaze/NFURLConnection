@@ -9,26 +9,12 @@
 #import "NFURLRequest.h"
 #import "NFURLResponse.h"
 
-@protocol NFURLConnectionDelegate;
+@interface NFURLConnection : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 
-@interface NFURLConnection : NSObject
+@property (nonatomic, readonly) int requestCount;
 
-@property (nonatomic, readonly) NSOperationQueue *queue;
-@property (nonatomic, assign) id<NFURLConnectionDelegate> delegate;
-
-- (id)initWithDelegate:(NSObject<NFURLConnectionDelegate> *)delegate;
-
-- (NFURLResponse *)sendSynchronousRequest:(NFURLRequest *)request;
 - (void)sendRequest:(NFURLRequest *)request;
 
-- (int)executingRequestCount;
-- (int)outstandingRequestCount;
 - (void)cancelAllOperations;
-
-@end
-
-@protocol NFURLConnectionDelegate <NSObject>
-
-- (void)NFURLConnection:(NFURLConnection *)connection requestCompleted:(NFURLRequest *)request;
 
 @end

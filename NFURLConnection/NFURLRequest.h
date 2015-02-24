@@ -10,30 +10,16 @@
 
 #define NFURLRequestDefaultContentType @"application/x-www-form-urlencoded"
 
-@interface NFURLRequest : NSOperation <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface NFURLRequest : NSMutableURLRequest
 
-@property (nonatomic, retain) NSMutableURLRequest *req;
-@property (nonatomic, assign) int requestType;
-@property (nonatomic, retain) id tag;
-@property (nonatomic, retain) NSDictionary *parameters;
-@property (nonatomic, retain) NSURL *URL;
-@property (nonatomic, retain) NSString *HTTPMethod, *contentType;
-@property (nonatomic, readonly) BOOL isExecuting, isFinished;
-@property (nonatomic, retain) NFURLResponse *response;
+@property (nonatomic, strong) NFURLResponseHandler handler;
+@property (nonatomic, readonly) NSDictionary *parameters;
+@property (nonatomic, assign) int retries;
+@property (nonatomic, assign) int maxRetryCount;
 
-+ (NFURLRequest *)request;
-+ (NFURLRequest *)requestWithURL:(NSURL *)url;
-+ (NFURLRequest *)requestWithURL:(NSURL *)url parameters:(NSDictionary *)params;
-+ (NFURLRequest *)requestWithType:(int)requestType;
++ (id)requestWithHandler:(NFURLResponseHandler)handler;
++ (id)requestWithURL:(NSURL *)url handler:(NFURLResponseHandler)handler;
 
-+ (NFURLResponse *)sendSynchronousRequest:(NFURLRequest *)request;
-
-- (id)initWithURL:(NSURL *)url parameters:(NSDictionary *)params;
-- (id)initWithURL:(NSURL *)url;
-- (id)initWithRequestType:(int)requestType;
-
-- (void)setParameterValue:(id)value forKey:(NSString *)key;
-
-- (NSURLRequest *)urlRequest;
+- (void)setHTTPMethod:(NSString *)method parameters:(NSDictionary *)parameters;
 
 @end
